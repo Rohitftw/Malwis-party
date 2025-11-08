@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malwis Party | Premier Venue & Events</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CSS VARIABLES & THEME --- */
+        :root {
+            --color-primary: #FFBE0B;    /* Sunny Yellow */
+            --color-primary-dark: #F5A623;
+            --color-accent: #FB5607;     /* Vibrant Coral/Orange */
+            --color-dark: #262626;       /* Nearly Black for text */
+            --color-light: #F8F9FA;      /* Off-white background */
+            --color-white: #FFFFFF;
+            --color-muted: #6c757d;
+
+            --gradient-sunny: linear-gradient(135deg, #FFBE0B 0%, #FB5607 100%);
+            --gradient-glass: linear-gradient(145deg, rgba(255,255,255,0.9), rgba(255,255,255,0.6));
+            
+            --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.05);
+
+            --radius-md: 12px;
+            --radius-lg: 24px;
+
+            --font-head: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        /* --- RESET & BASE --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-light);
+            color: var(--color-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 700; line-height: 1.2; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+        button, .btn { cursor: pointer; border: none; font-family: var(--font-head); font-weight: 600; transition: all 0.3s ease; }
+        section { padding: 5rem 5%; max-width: 1280px; margin: 0 auto; }
+
+        /* Utilites */
+        .text-accent { color: var(--color-accent); }
+        .text-gradient { background: var(--gradient-sunny); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .flex-center { display: flex; align-items: center; justify-content: center; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+
+        /* --- COMPONENTS --- */
+        .btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.875rem 2rem; border-radius: 50px;
+            font-size: 1rem; letter-spacing: 0.5px;
+        }
+        .btn-primary {
+            background: var(--color-dark); color: var(--color-primary);
+        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px -10px rgba(0,0,0,0.5); background: var(--color-accent); color: white; }
+        .btn-secondary {
+            background: transparent; border: 2px solid var(--color-dark); color: var(--color-dark);
+        }
+        .btn-secondary:hover { background: var(--color-dark); color: var(--color-white); }
+
+        .card-glass {
+            background: var(--gradient-glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.5);
+            border-radius: var(--radius-md);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-glass:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+
+        /* --- NAVIGATION --- */
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.25rem 5%;
+            position: fixed; width: 100%; top: 0; z-index: 100;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .logo { font-family: var(--font-head); font-weight: 800; font-size: 1.5rem; letter-spacing: -1px; display: flex; align-items: center; }
+        .logo span { color: var(--color-accent); }
+        .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+        .nav-links a { font-weight: 500; font-size: 0.95rem; position: relative; }
+        .nav-links a:not(.nav-cta)::after {
+            content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px;
+            background: var(--gradient-sunny); transition: width 0.3s ease;
+        }
+        .nav-links a:not(.nav-cta):hover::after { width: 100%; }
+        .nav-cta {
+            background: var(--gradient-sunny); color: white !important;
+            padding: 0.6rem 1.5rem; border-radius: 50px; font-weight: 700 !important;
+        }
+        .nav-cta:hover { opacity: 0.9; }
+        .mobile-toggle { display: none; font-size: 1.5rem; background: none; }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            min-height: 90vh;
+            display: flex; align-items: center;
+            padding-top: 80px; /* Nav offset */
+            background:
+                radial-gradient(circle at 80% 20%, rgba(255, 190, 11, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 20% 80%, rgba(251, 86, 7, 0.1) 0%, transparent 40%);
+        }
+        .hero-content { max-width: 650px; }
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--color-dark);
+        }
+        .hero-sub {
+            font-size: 1.25rem; color: var(--color-muted); margin-bottom: 2.5rem;
+        }
+        .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        /* --- FEATURES SECTION --- */
+        .section-head { text-align: center; margin-bottom: 4rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .section-head h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .feature-icon {
+            width: 60px; height: 60px;
+            background: var(--gradient-sunny);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem; color: white;
+        }
+        .feature-card h3 { margin-bottom: 1rem; }
+        .feature-card p { color: var(--color-muted); }
+
+        /* --- ABOUT TEASER --- */
+        .about-teaser {
+            display: flex; align-items: center; gap: 4rem;
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            padding: 4rem !important;
+            box-shadow: var(--shadow-lg);
+        }
+        .about-text { flex: 1; }
+        .about-visual {
+            flex: 1; height: 300px;
+            background: var(--gradient-sunny);
+            border-radius: var(--radius-md);
+            position: relative; overflow: hidden;
+        }
+        /* Placeholder visual pattern */
+        .about-visual::after {
+            content: ''; position: absolute; inset: 0;
+            background-image: radial-gradient(var(--color-white) 2px, transparent 2px);
+            background-size: 20px 20px; opacity: 0.2;
+        }
+
+        /* --- GALLERY PREVIEW --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .gallery-item {
+            aspect-ratio: 4/3;
+            background-color: #eee;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            position: relative;
+        }
+        .gallery-item img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img { transform: scale(1.05); }
+        /* Using placemholder.co for demo images if no local files */
+        .gallery-placeholder {
+            width: 100%; height: 100%;
+            background: linear-gradient(45deg, #f3f4f6, #e5e7eb);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--color-muted); font-weight: 600;
+        }
+
+        /* --- TESTIMONIAL --- */
+        .testimonial-section { background: var(--color-dark); color: white; text-align: center; border-radius: var(--radius-lg); margin: 5rem auto; }
+        .quote-mark { font-size: 4rem; color: var(--color-primary); line-height: 1; height: 40px; }
+        .quote-text { font-size: 1.5rem; font-weight: 500; margin: 2rem 0; font-style: italic; }
+        .quote-author { color: var(--color-primary); font-weight: 700; letter-spacing: 1px; }
+
+        /* --- FOOTER --- */
+        footer { background: var(--color-white); padding: 5rem 5% 2rem; border-top: 1px solid rgba(0,0,0,0.05); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 3rem; }
+        .footer-brand p { margin-top: 1rem; color: var(--color-muted); max-width: 300px; }
+        .footer-links h4 { margin-bottom: 1.5rem; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.8rem; }
+        .footer-links a { color: var(--color-muted); }
+        .footer-links a:hover { color: var(--color-accent); }
+        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.05); color: var(--color-muted); font-size: 0.9rem; }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed; top: 70px; right: -100%;
+                flex-direction: column; background: white;
+                width: 100%; padding: 2rem; box-shadow: var(--shadow-lg);
+                transition: right 0.3s ease;
+            }
+            .nav-links.active { right: 0; }
+            .mobile-toggle { display: block; }
+            .hero h1 { font-size: 2.8rem; }
+            .about-teaser { flex-direction: column-reverse; padding: 2rem !important; gap: 2rem; }
+            .about-visual { width: 100%; height: 200px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            MALWIS<span class="text-accent">.</span>PARTY
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="#hero">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+            <a href="#" class="nav-cta">Book Now</a>
+        </div>
+        <button class="mobile-toggle" id="menuToggle" aria-label="Toggle Menu">☰</button>
+    </nav>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h1>Bright Ideas,<br><span class="text-gradient">Unforgettable Nights.</span></h1>
+                <p class="hero-sub">The premium venue for modern celebrations. From corporate milestones to intimate private parties, we set the perfect stage.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-primary">Get a Quote</a>
+                    <a href="#gallery" class="btn btn-secondary">View Gallery</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="section-head">
+                <h2>Crafted for every occasion</h2>
+                <p class="text-muted">We combine versatile spaces with premium service to ensure your event is flawless.</p>
+            </div>
+            <div class="grid-3">
+                <div class="card-glass feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3>Corporate Events</h3>
+                    <p>Impress clients and teams alike with state-of-the-art AV, polished service, and flexible layouts for 20-150 guests.</p>
+                </div>
+                <div class="card-glass feature-card">
+                    <div class="feature-icon">🥂</div>
+                    <h3>Private Parties</h3>
+                    <p>Birthdays, anniversaries, or just because. Our vibrant atmosphere provides the perfect backdrop for celebration.</p>
+                </div>
+                <div class="card-glass feature-card">
+                    <div class="feature-icon">🍽️</div>
+                    <h3>Full-Service Catering</h3>
+                    <p>From canapés to multi-course banquets. Our in-house culinary team crafts menus that delight every palate.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+             <div class="about-teaser">
+                 <div class="about-text">
+                     <h4 class="text-accent">WHO WE ARE</h4>
+                     <h2 style="margin: 1rem 0;">More than just a venue.</h2>
+                     <p style="color: var(--color-muted); margin-bottom: 2rem;">
+                         Malwis Party was founded on a simple idea: celebrations should be bright, stress-free, and memorable. We've stripped away the stuffy banquet hall vibe and replaced it with modern energy, premium design, and a team that genuinely cares about your night.
+                     </p>
+                     <a href="#contact" style="font-weight: 700; border-bottom: 2px solid var(--color-primary);">Meet the team →</a>
+                 </div>
+                 <div class="about-visual">
+                     </div>
+             </div>
+        </section>
+
+        <section id="gallery">
+            <div class="section-head">
+                <h2>See the space in action</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">Main Hall Setup</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">Corporate Lounge</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">Evening Lighting</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">Bar & Catering</div>
+                </div>
+            </div>
+            <div class="flex-center" style="margin-top: 3rem;">
+                <button class="btn btn-secondary">Follow us on Instagram</button>
+            </div>
+        </section>
+
+        <section class="testimonial-section" id="testimonial">
+            <div class="quote-mark">“</div>
+            <p class="quote-text">The perfect blend of professional and fun. Our annual charity gala was a massive success thanks to the Malwis team.</p>
+            <p class="quote-author">— SARAH JENKINS, CEO @ TECHCORP</p>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo">MALWIS<span class="text-accent">.</span>PARTY</div>
+                <p>Bringing bright energy to professional events and private celebrations since 2023.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li>hello@malwisparty.com</li>
+                    <li>+1 (555) 123-4567</li>
+                    <li>123 Vibrant St, Party City</li>
+                </ul>
+                <a href="mailto:hello@malwisparty.com" class="btn btn-primary" style="margin-top: 1rem; padding: 0.5rem 1.5rem; font-size: 0.9rem;">Email Us</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2023 Malwis Party Venue. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        /* --- SIMPLE INTERACTIVITY --- */
+
+        // 1. Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // 2. Close mobile menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                    menuToggle.textContent = '☰';
+                }
+            });
+        });
+
+        // 3. Simple Scroll Reveal (Optional Polish)
+        // Adds a subtle 'fade-in' class to sections as they scroll into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = 0;
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'all 0.6s ease-out';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
