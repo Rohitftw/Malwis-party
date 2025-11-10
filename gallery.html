@@ -16,7 +16,7 @@
             <a href="index.html" class="logo">MALWIS.<span class="logo-accent">PARTY</span></a>
             <button class="mobile-toggle" aria-label="Toggle Navigation" id="mobile-toggle"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
             <ul class="nav-links" id="nav-links">
-                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
@@ -31,15 +31,23 @@
 
 
     <main>
-        <section class="page-hero gallery-hero">
-            <div class="hero-bg-glow"></div>
-            <div class="container animate-fade-up">
-                <h1 class="hero-title">Our <span class="gradient-text">Gallery</span></h1>
-                <p class="hero-subtitle">Real events, real energy. See how we bring visions to life.</p>
-                <div class="hero-ctas"><a href="#instagram" class="btn btn-outline">Follow on Instagram</a></div>
+        <section class="page-hero gallery-hero-premium">
+            <div class="hero-bg">
+                <img src="assests/gallery/hero.png" alt="Vibrant party atmosphere" class="hero-bg-img">
+                <div class="hero-gradient-overlay"></div>
+            </div>
+            <div class="container hero-content-overlay text-center">
+                <h1 class="hero-title-large animate-fade-up">
+                    Our <span class="gradient-text">Gallery</span>
+                </h1>
+                <p class="hero-subtitle-large animate-fade-up delay-200">
+                    Real events, real energy. See how we bring visions to life.
+                </p>
+                <div class="hero-cta-buttons animate-fade-up delay-300">
+                    <a href="#instagram" class="btn btn-outline-white btn-large">Follow on Instagram</a>
+                </div>
             </div>
         </section>
-
         <section id="gallery-main" class="section-padding">
             <div class="container">
                 <div class="gallery-filters animate-fade-up delay-100" role="tablist" aria-label="Gallery filters">
@@ -49,66 +57,94 @@
                     <button class="filter-pill" role="tab" aria-selected="false" aria-controls="gallery-grid" data-filter="private">Private Parties</button>
                 </div>
 
-                <div id="gallery-grid" class="gallery-grid animate-fade-up delay-200" aria-live="polite">
+                <div id="gallery-grid" class="gallery-masonry animate-fade-up delay-200">
                     <figure class="gallery-item" data-category="corporate">
-                        <button class="gallery-thumb" data-index="0" aria-label="View image: TechCorp Annual Gala">
-                            <img src="https://via.placeholder.com/600x400/f0f0f0/cccccc?text=Corporate+Gala" alt="Large corporate gala hall with purple lighting" loading="lazy">
-                            <figcaption class="gallery-caption">TechCorp Annual Gala</figcaption>
-                        </button>
-                    </figure>
-                    <figure class="gallery-item" data-category="corporate">
-                        <button class="gallery-thumb" data-index="1" aria-label="View image: Product Launch Stage">
-                            <img src="https://via.placeholder.com/600x400/f0f0f0/cccccc?text=Product+Launch" alt="Modern stage setup for product launch" loading="lazy">
-                            <figcaption class="gallery-caption">Product Launch Stage</figcaption>
-                        </button>
-                    </figure>
-                    <figure class="gallery-item" data-category="private">
-                        <button class="gallery-thumb" data-index="2" aria-label="View image: Rooftop Sunset Cocktail Hour">
-                            <img src="https://via.placeholder.com/600x800/f0f0f0/cccccc?text=Rooftop+Party" alt="Guests enjoying cocktails on rooftop at sunset" loading="lazy">
-                            <figcaption class="gallery-caption">Rooftop Sunset Cocktail Hour</figcaption>
-                        </button>
-                    </figure>
-                    <figure class="gallery-item" data-category="private">
-                        <button class="gallery-thumb" data-index="3" aria-label="View image: Neon 30th Birthday Bash">
-                            <img src="https://via.placeholder.com/600x600/f0f0f0/cccccc?text=Neon+Party" alt="Neon lights and dance floor at birthday party" loading="lazy">
-                            <figcaption class="gallery-caption">Neon 30th Birthday Bash</figcaption>
+                        <button class="gallery-thumb" data-index="0" aria-label="View image">
+                            <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Corporate Gala">
+                            <figcaption class="gallery-caption">
+                                <h4>TechCorp Annual Gala</h4>
+                                <p>Corporate</p>
+                            </figcaption>
                         </button>
                     </figure>
                     <figure class="gallery-item" data-category="weddings">
-                        <button class="gallery-thumb" data-index="4" aria-label="View image: Elegant Wedding Reception Details">
-                            <img src="https://via.placeholder.com/600x400/f0f0f0/cccccc?text=Wedding+Details" alt="Close up of elegant wedding table setting" loading="lazy">
-                            <figcaption class="gallery-caption">Elegant Reception Details</figcaption>
+                        <button class="gallery-thumb" data-index="1" aria-label="View image">
+                            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Wedding Table Details">
+                            <figcaption class="gallery-caption">
+                                <h4>Elegant Reception Details</h4>
+                                <p>Weddings</p>
+                            </figcaption>
                         </button>
                     </figure>
-                    <figure class="gallery-item" data-category="weddings">
-                        <button class="gallery-thumb" data-index="5" aria-label="View image: First Dance Moment">
-                            <img src="https://via.placeholder.com/600x800/f0f0f0/cccccc?text=First+Dance" alt="Couple having first dance under spotlights" loading="lazy">
-                            <figcaption class="gallery-caption">First Dance Moment</figcaption>
+                    <figure class="gallery-item" data-category="private">
+                        <button class="gallery-thumb" data-index="2" aria-label="View image">
+                            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Rooftop Party">
+                            <figcaption class="gallery-caption">
+                                <h4>Rooftop Sunset Soiree</h4>
+                                <p>Private Parties</p>
+                            </figcaption>
                         </button>
                     </figure>
                     <figure class="gallery-item" data-category="corporate">
-                         <button class="gallery-thumb" data-index="6" aria-label="View image: Conference Breakout Area">
-                            <img src="https://via.placeholder.com/600x400/f0f0f0/cccccc?text=Conference" alt="Modern lounge seating for conference breakout" loading="lazy">
-                             <figcaption class="gallery-caption">Conference Breakout Area</figcaption>
+                        <button class="gallery-thumb" data-index="3" aria-label="View image">
+                            <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Conference Keynote">
+                            <figcaption class="gallery-caption">
+                                <h4>FutureTech Conference</h4>
+                                <p>Corporate</p>
+                            </figcaption>
                         </button>
                     </figure>
-                     <figure class="gallery-item" data-category="private">
-                         <button class="gallery-thumb" data-index="7" aria-label="View image: Live DJ Performance">
-                            <img src="https://via.placeholder.com/600x400/f0f0f0/cccccc?text=DJ+Performance" alt="DJ performing at private event" loading="lazy">
-                             <figcaption class="gallery-caption">Live DJ Performance</figcaption>
+                     <figure class="gallery-item" data-category="weddings">
+                        <button class="gallery-thumb" data-index="4" aria-label="View image">
+                            <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Wedding First Dance">
+                            <figcaption class="gallery-caption">
+                                <h4>First Dance Moment</h4>
+                                <p>Weddings</p>
+                            </figcaption>
                         </button>
                     </figure>
-
-                    <p id="gallery-empty-msg" class="gallery-empty hidden" aria-hidden="true">No images found for this category.</p>
+                    <figure class="gallery-item" data-category="private">
+                        <button class="gallery-thumb" data-index="5" aria-label="View image">
+                            <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="DJ Performance">
+                            <figcaption class="gallery-caption">
+                                <h4>Neon Birthday Bash</h4>
+                                <p>Private Parties</p>
+                            </figcaption>
+                        </button>
+                    </figure>
+                     <figure class="gallery-item" data-category="corporate">
+                        <button class="gallery-thumb" data-index="6" aria-label="View image">
+                            <img src="https://images.unsplash.com/photo-1551818255-e6e10975bc17?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Networking Event">
+                            <figcaption class="gallery-caption">
+                                <h4>Annual Networking Mixer</h4>
+                                <p>Corporate</p>
+                            </figcaption>
+                        </button>
+                    </figure>
                 </div>
             </div>
         </section>
 
-        <section class="cta-band section-padding text-center animate-fade-up">
+        <!-- <section class="cta-band section-padding text-center animate-fade-up">
             <div class="container">
                 <h2>Inspired by what you see?</h2>
                 <p style="color: rgba(255,255,255,0.9); margin-bottom: 2rem;">Let's create something even better for your next event.</p>
                 <a href="booking.html" class="btn btn-primary-dark">Start Planning</a>
+            </div>
+        </section> -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="cta-panel-premium animate-fade-up">
+                    <div class="cta-content">
+                        <h2 class="cta-title">Inspired by what you see?</h2>
+                        <p class="cta-text">Let's create something even better for your next event.</p>
+                        <a href="booking.html" class="btn btn-primary-dark btn-large">Get a Custom Quote</a>
+                    </div>
+                    <div class="cta-visual">
+                        <div class="circle-1"></div>
+                        <div class="circle-2"></div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

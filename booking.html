@@ -16,7 +16,7 @@
             <a href="index.html" class="logo">MALWIS.<span class="logo-accent">PARTY</span></a>
             <button class="mobile-toggle" aria-label="Toggle Navigation" id="mobile-toggle"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
             <ul class="nav-links" id="nav-links">
-                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
@@ -31,38 +31,101 @@
 
 
     <main>
-        <section class="page-hero booking-hero">
-            <div class="hero-bg-glow"></div>
-            <div class="container animate-fade-up">
-                <h1 class="hero-title">Book Your <span class="gradient-text">Celebration</span></h1>
-                <p class="hero-subtitle">Check availability and secure your date instantly. Two premium evening slots available daily.</p>
+        <section class="page-hero booking-hero-premium">
+            <div class="hero-bg">
+                 <img src="assests/book/hero.jpg" alt="Setting the scene for a celebration" class="hero-bg-img">
+                <div class="hero-gradient-overlay"></div>
+            </div>
+            <div class="container hero-content-overlay text-center">
+                <h1 class="hero-title-large animate-fade-up">
+                    Book Your <span class="gradient-text">Celebration</span>
+                </h1>
+                <p class="hero-subtitle-large animate-fade-up delay-200">
+                    Check availability and secure your date instantly. Two premium evening slots available daily.
+                </p>
             </div>
         </section>
 
-        <section id="booking-main" class="section-padding">
-            <div class="container booking-container">
-                <div class="booking-card calendar-card animate-fade-up delay-100">
-                    <div class="card-header">
-                        <h3>Select a Date</h3>
-                        <div class="calendar-legend">
-                            <span class="legend-item"><span class="dot available"></span> Available</span>
-                            <span class="legend-item"><span class="dot partial"></span> Selling Fast</span>
-                            <span class="legend-item"><span class="dot booked"></span> Fully Booked</span>
+        <section id="booking-main" class="section-padding bg-offwhite">
+            <div class="container booking-layout">
+                
+                <div class="booking-main-col">
+                     <div class="booking-card calendar-card animate-fade-up delay-100">
+                        <div class="card-header">
+                            <h3>Select a Date</h3>
+                            <div class="calendar-legend">
+                                <span class="legend-item"><span class="dot available"></span> Available</span>
+                                <span class="legend-item"><span class="dot partial"></span> Selling Fast</span>
+                                <span class="legend-item"><span class="dot booked"></span> Fully Booked</span>
+                            </div>
+                        </div>
+                        <div id="calendar-grid" class="calendar-grid" role="grid" aria-label="Event Calendar">
+                            </div>
+                    </div>
+
+                    <div class="recent-bookings-panel animate-fade-up delay-200">
+                        <button id="toggle-bookings-btn" class="toggle-bookings-btn" aria-expanded="false">
+                            <span>Your Recent Bookings</span>
+                            <span class="toggle-icon">↓</span>
+                        </button>
+                        <div id="recent-bookings-list" class="bookings-list" hidden>
+                            <p class="no-bookings-msg">No active bookings found on this device.</p>
                         </div>
                     </div>
-                    <div id="calendar-grid" class="calendar-grid" role="grid" aria-label="Event Calendar">
-                        </div>
                 </div>
 
-                <div class="recent-bookings-panel animate-fade-up delay-200">
-                    <button id="toggle-bookings-btn" class="toggle-bookings-btn" aria-expanded="false">
-                        <span>Your Recent Bookings</span>
-                        <span class="toggle-icon">↓</span>
-                    </button>
-                    <div id="recent-bookings-list" class="bookings-list" hidden>
-                        <p class="no-bookings-msg">No active bookings found on this device.</p>
+                <div class="booking-sidebar animate-fade-up delay-300">
+                    <div class="sidebar-card info-card-premium">
+                        <h3>Why Book Direct?</h3>
+                        <ul class="benefits-list">
+                            <li>
+                                <span class="benefit-icon">⚡</span>
+                                <div>
+                                    <strong>Instant Confirmation</strong>
+                                    <p>Secure your date immediately. No waiting for callbacks.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">🛡️</span>
+                                <div>
+                                    <strong>Best Rate Guarantee</strong>
+                                    <p>Direct bookings get our lowest venue rates, guaranteed.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">🎧</span>
+                                <div>
+                                    <strong>Dedicated Support</strong>
+                                    <p>Direct line to our event planning team after booking.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card process-card">
+                         <h3>How It Works</h3>
+                         <div class="process-steps">
+                             <div class="step">
+                                 <span class="step-num">1</span>
+                                 <p>Select your preferred date from the calendar.</p>
+                             </div>
+                             <div class="step">
+                                 <span class="step-num">2</span>
+                                 <p>Choose an available evening time slot.</p>
+                             </div>
+                             <div class="step">
+                                 <span class="step-num">3</span>
+                                 <p>Enter your details to instantly reserve.</p>
+                             </div>
+                         </div>
+                    </div>
+
+                    <div class="sidebar-help">
+                        <p>Need help with a custom date?</p>
+                        <a href="contact.html" class="text-link">Contact our team →</a>
                     </div>
                 </div>
+
             </div>
         </section>
     </main>

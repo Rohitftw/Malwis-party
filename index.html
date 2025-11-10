@@ -11,6 +11,18 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div id="intro-overlay" class="intro-overlay">
+        <div class="intro-content">
+            <h1 class="intro-logo">MALWIS<span class="logo-accent pulse">.PARTY</span></h1>
+            <p class="intro-text">Experience the unforgettable.</p>
+            <div class="scroll-indicator">
+                <span>Scroll to Enter</span>
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
@@ -23,7 +35,7 @@
                 <span class="bar"></span>
             </button>
             <ul class="nav-links" id="nav-links">
-                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
@@ -37,28 +49,22 @@
     </nav>
 
     <main>
-        <section id="home" class="hero">
-            <div class="hero-bg-glow"></div>
-            <div class="container hero-container">
-                <div class="hero-content animate-fade-up">
-                    <h1 class="hero-title">
-                        Bright Ideas,<br>
-                        <span class="gradient-text shimmer-text">Unforgettable Nights.</span>
-                    </h1>
-                    <p class="hero-subtitle">
-                        The premium venue for modern celebrations. From corporate milestones to private gatherings, we set the perfect stage.
-                    </p>
-                    <div class="hero-ctas">
-                        <a href="#contact" class="btn btn-primary">Get a Quote</a>
-                        <a href="#gallery" class="btn btn-outline">View Gallery</a>
-                    </div>
-                </div>
-                <div class="hero-visual animate-fade-up delay-200">
-                    <div class="floating-shape shape-1"></div>
-                    <div class="floating-shape shape-2"></div>
-                    <div class="hero-image-placeholder">
-                        <img src="https://images.unsplash.com/photo-1620735692151-26a7e0748429?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=387" alt="Elegant party setup" loading="lazy">
-                    </div>
+        <section id="home" class="hero-fullscreen">
+            <<div class="hero-bg">
+                <img src="assests/homebg.png" alt="Hero Background" class="hero-bg-img">
+                <div class="hero-gradient-overlay"></div>
+            </div>
+            <div class="container hero-content-overlay">
+                <!-- <div class="hero-logo-text">
+                    <span class="logo-malwis">MALWIS.</span><span class="logo-party">PARTY</span>
+                </div> -->
+                <h1 class="hero-tagline">Your Vision, Our Stage.<br>Unforgettable Events Begin Here.</h1>
+                <p class="hero-description">
+                    Crafting bespoke experiences in stunning venues. Let us bring your dream event to life.
+                </p>
+                <div class="hero-cta-buttons">
+                    <a href="#contact" class="btn btn-primary btn-large">Get a Quote</a>
+                    <a href="#gallery" class="btn btn-outline-white btn-large">View Gallery</a>
                 </div>
             </div>
         </section>
@@ -99,88 +105,134 @@
                 </div>
                 <div class="about-visual animate-fade-up delay-200">
                     <div class="blob-shape"></div>
-                    <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" alt="Happy event attendees" class="about-img">
+                    <img src="assests/home-2nd.png" alt="Happy event attendees" class="about-img">
                 </div>
             </div>
         </section>
 
-        <section id="gallery" class="gallery section-padding">
+        <section id="venues" class="section-padding bg-offwhite">
             <div class="container">
-                <div class="section-header animate-fade-up">
-                    <h2 class="section-title">See the Space in Action.</h2>
-                    <p class="section-subtitle">A glimpse into our setup and atmosphere.</p>
+                <div class="section-header animate-fade-up text-center mb-5">
+                    <h2 class="section-title">Our Unique Spaces</h2>
+                    <p class="section-subtitle">Diverse settings for every style of celebration.</p>
                 </div>
-                <div class="gallery-grid">
-                    <div class="gallery-item animate-fade-up delay-100">
-                        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" alt="Event Highlight 1" loading="lazy">
-                        <div class="gallery-overlay">
-                            <span>Corporate Gala</span>
+
+                <div class="venue-grid">
+                    <div class="venue-card animate-fade-up delay-100">
+                        <div class="venue-image">
+                            <img src="assests/1sthome.png" alt="Grand Ballroom">
+                            <div class="venue-overlay">
+                                <h3>GRAND BALLROOM</h3>
+                            </div>
+                        </div>
+                        <div class="venue-details">
+                            <h4>Classic Elegance</h4>
+                            <p>Spacious and sophisticated, perfect for large receptions and galas.</p>
+                            <a href="gallery.html" class="btn btn-outline-small">EXPLORE</a>
                         </div>
                     </div>
-                    <div class="gallery-item animate-fade-up delay-200">
-                        <img src="https://images.unsplash.com/photo-1670880016314-7366859b9136?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470" alt="Event Highlight 2" loading="lazy">
-                         <div class="gallery-overlay">
-                            <span>DJ & Dance Floor</span>
+
+                    <div class="venue-card animate-fade-up delay-200">
+                        <div class="venue-image">
+                            <img src="assests/rooftop2nd.jpg" alt="Rooftop Lounge">
+                            <div class="venue-overlay">
+                                <h3>ROOFTOP LOUNGE</h3>
+                            </div>
+                        </div>
+                        <div class="venue-details">
+                            <h4>Modern & Airy</h4>
+                            <p>Stunning city views with a chic, open-air atmosphere for cocktails.</p>
+                            <a href="gallery.html" class="btn btn-outline-small">EXPLORE</a>
                         </div>
                     </div>
-                    <div class="gallery-item animate-fade-up delay-300">
-                         <img src="https://images.unsplash.com/photo-1595407753234-0882f1e77954?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870" alt="Event Highlight 3" loading="lazy">
-                         <div class="gallery-overlay">
-                            <span>Wedding Reception</span>
+
+                    <div class="venue-card animate-fade-up delay-300">
+                        <div class="venue-image">
+                             <img src="assests/garden.png" alt="The Garden">
+                            <div class="venue-overlay">
+                                <h3>THE GARDEN</h3>
+                            </div>
                         </div>
-                    </div>
-                    <div class="gallery-item animate-fade-up delay-400">
-                         <img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" alt="Event Highlight 4" loading="lazy">
-                         <div class="gallery-overlay">
-                            <span>Private Lounge</span>
+                        <div class="venue-details">
+                            <h4>Outdoor Romance</h4>
+                            <p>Lush greenery and intimate lighting for ceremonies and garden parties.</p>
+                            <a href="gallery.html" class="btn btn-outline-small">EXPLORE</a>
                         </div>
                     </div>
                 </div>
-                <div class="gallery-cta animate-fade-up">
-                    <a href="#instagram" class="btn btn-outline">Follow us on Instagram</a>
-                </div>
+                 <div class="text-center mt-5 animate-fade-up">
+                     <a href="#instagram" class="btn btn-outline">Follow us on Instagram</a>
+                 </div>
             </div>
         </section>
 
-        <section class="testimonial section-padding dark-theme animate-fade-up">
-            <div class="container testimonial-container">
-                <div class="quote-icon">“</div>
-                
-                <div class="carousel-viewport">
-                    <ul class="carousel-track" id="testimonial-track">
-                        <li class="carousel-slide current-slide">
-                            <blockquote>
-                                The perfect blend of professional and fun. Our annual gala was a massive success thanks to the Malwis team.
-                            </blockquote>
-                            <cite>— Sarah Jenkins, CEO @ TechCorp</cite>
-                        </li>
-                        <li class="carousel-slide">
-                            <blockquote>
-                                Unreal energy! They took my 40th birthday vision and completely 10x'd it. The lighting setup was incredible.
-                            </blockquote>
-                            <cite>— David Martinez, Private Client</cite>
-                        </li>
-                        <li class="carousel-slide">
-                            <blockquote>
-                                Elegant yet totally fun. It was the perfect modern balance for our wedding reception.
-                            </blockquote>
-                            <cite>— Priya Patel, Newlywed</cite>
-                        </li>
-                    </ul>
-                </div>
+<section id="testimonials" class="section-padding">
+            <div class="container">
+                <div class="testimonial-carousel">
+                    <div class="testimonial-track" id="testimonial-track">
+                        
+                        <div class="testimonial-slide current-slide">
+                            <div class="testi-split-layout">
+                                <div class="testi-card">
+                                    <div class="testi-quote-icon">“</div>
+                                    <p class="testi-text">
+                                        MALWIS.PARTY exceeded expectations for our wedding reception. Every detail was perfect, and the atmosphere was magical. We wouldn't change a single thing about our experience!
+                                    </p>
+                                    <div class="testi-author">
+                                        <h4>SARAH & TOM</h4>
+                                        <span>Bride & Groom</span>
+                                    </div>
+                                </div>
+                                <div class="testi-image">
+                                    <img src="assests/home-car/1st.webp" alt="Sarah and Tom Wedding">
+                                </div>
+                            </div>
+                        </div>
 
-                <div class="carousel-nav">
-                    <button class="carousel-btn prev-btn" aria-label="Previous Slide">←</button>
-                    <div class="carousel-dots" id="carousel-dots">
-                        <button class="dot current-dot" aria-label="Slide 1"></button>
-                        <button class="dot" aria-label="Slide 2"></button>
-                        <button class="dot" aria-label="Slide 3"></button>
+                        <div class="testimonial-slide">
+                            <div class="testi-split-layout">
+                                <div class="testi-card">
+                                    <div class="testi-quote-icon">“</div>
+                                    <p class="testi-text">
+                                        Professional, punctual, and incredibly creative. Our annual corporate gala has never looked this good. The team handled everything so we could actually enjoy the night.
+                                    </p>
+                                    <div class="testi-author">
+                                        <h4>AMANDA RAY</h4>
+                                        <span>TechCorp CEO</span>
+                                    </div>
+                                </div>
+                                <div class="testi-image">
+                                    <img src="assests/home-car/2nd.png" alt="Corporate Gala Event">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testi-split-layout">
+                                <div class="testi-card">
+                                    <div class="testi-quote-icon">“</div>
+                                    <p class="testi-text">
+                                        Unreal energy! They took my 40th birthday vision and completely 10x'd it. The lighting setup was incredible and the vibe was exactly what I wanted.
+                                    </p>
+                                    <div class="testi-author">
+                                        <h4>DAVID MARTINEZ</h4>
+                                        <span>Private Client</span>
+                                    </div>
+                                </div>
+                                <div class="testi-image">
+                                    <img src="assests/home-car/3rd.png" alt="40th Birthday Party">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <div class="testi-controls">
+                        <button class="carousel-btn prev-btn" aria-label="Previous Slide">←</button>
+                        <div class="carousel-nav" id="carousel-dots"></div>
+                        <button class="carousel-btn next-btn" aria-label="Next Slide">→</button>
                     </div>
-                    <button class="carousel-btn next-btn" aria-label="Next Slide">→</button>
                 </div>
             </div>
         </section>
-
         <section id="faqs" class="faqs section-padding bg-offwhite">
             <div class="container">
                 <div class="section-header animate-fade-up">

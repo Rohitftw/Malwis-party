@@ -1,6 +1,7 @@
 // js/main.js
 
 document.addEventListener('DOMContentLoaded', () => {
+    initIntro();
     initNavbarScroll();
     initMobileMenu();
     initScrollAnimations();
@@ -8,16 +9,57 @@ document.addEventListener('DOMContentLoaded', () => {
     initTestimonialCarousel();
     initFAQAccordion();
 });
+/**
+ * 0. Intro Overlay
+ * Handles the initial landing screen and scroll-to-enter.
+ */
+function initIntro() {
+    const intro = document.getElementById('intro-overlay');
+    if (!intro) return;
+
+    // 1. Check if user has already seen the intro this session
+    if (sessionStorage.getItem('malwis_intro_seen')) {
+        // If yes, hide it immediately without animation
+        intro.style.display = 'none';
+        document.body.style.overflow = ''; // Ensure scroll is unlocked
+        return;
+    }
+
+    // 2. If not seen, lock scroll and prepare to show it
+    document.body.style.overflow = 'hidden';
+
+    const enterSite = () => {
+        if (intro.classList.contains('hidden')) return;
+        
+        // Mark as seen in session storage
+        sessionStorage.setItem('malwis_intro_seen', 'true');
+        
+        intro.classList.add('hidden');
+        document.body.style.overflow = ''; // Unlock scroll
+        
+        // Optional: removed the hero animation trigger here as it sometimes causes conflicts
+        // if the user scrolls too fast. The IntersectionObserver handles it better.
+    };
+
+    // Event listeners
+    window.addEventListener('wheel', enterSite, { once: true });
+    window.addEventListener('touchmove', enterSite, { once: true });
+    intro.addEventListener('click', enterSite);
+    
+    // Fallback auto-enter
+    setTimeout(enterSite, 6000);
+}
+
 
 /**
  * 1. Navbar Scroll Effect
  */
 function initNavbarScroll() {
-    const navbar = document.getElementById('navbar');
-    const scrollThreshold = 50;
+    const navbar = document.querySelector('.navbar');
+    if (!navbar) return;
 
     window.addEventListener('scroll', () => {
-        if (window.scrollY > scrollThreshold) {
+        if (window.scrollY > 50) { // Adjust scroll threshold as needed
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
@@ -93,68 +135,81 @@ function initSmoothScroll() {
 }
 
 /**
- * 5. Testimonial Carousel
- * Handles sliding track, updating dots, and auto-rotation.
+/**
+ * 5. Testimonial Carousel (Robust Version)
  */
 function initTestimonialCarousel() {
     const track = document.getElementById('testimonial-track');
-    if (!track) return;
+    const dotsNav = document.getElementById('carousel-dots');
+    if (!track || !dotsNav) return;
 
     const slides = Array.from(track.children);
     const nextButton = document.querySelector('.carousel-btn.next-btn');
     const prevButton = document.querySelector('.carousel-btn.prev-btn');
-    const dotsNav = document.getElementById('carousel-dots');
+    
+    // 1. Auto-generate dots
+    // Clear existing dots first to prevent duplicates if re-initialized
+    dotsNav.innerHTML = ''; 
+    slides.forEach((slide, index) => {
+        const dot = document.createElement('button');
+        dot.classList.add('carousel-dot');
+        if (index === 0) dot.classList.add('current-slide');
+        dot.setAttribute('aria-label', `Slide ${index + 1}`);
+        dotsNav.appendChild(dot);
+    });
+    
     const dots = Array.from(dotsNav.children);
     let currentIndex = 0;
 
-    const updateCarousel = (index) => {
-        track.style.transform = `translateX(-${index * 100}%)`;
-        
-        // Update active states for slides and dots
+    // 2. Main update function (Simplified: No track movement, just class toggling)
+    const moveToSlide = (targetIndex) => {
+        if (targetIndex < 0) targetIndex = slides.length - 1;
+        if (targetIndex >= slides.length) targetIndex = 0;
+
+        // Just toggle classes. CSS handles the rest (opacity/visibility).
         slides.forEach(slide => slide.classList.remove('current-slide'));
-        slides[index].classList.add('current-slide');
+        slides[targetIndex].classList.add('current-slide');
         
-        dots.forEach(dot => dot.classList.remove('current-dot'));
-        dots[index].classList.add('current-dot');
-
-        currentIndex = index;
+        dots.forEach(dot => dot.classList.remove('current-slide'));
+        dots[targetIndex].classList.add('current-slide');
+        
+        currentIndex = targetIndex;
     };
 
-    // Event Listeners for controls
-    nextButton.addEventListener('click', () => {
-        const nextIndex = (currentIndex + 1) % slides.length;
-        updateCarousel(nextIndex);
-        resetAutoPlay();
-    });
-
-    prevButton.addEventListener('click', () => {
-        const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
-        updateCarousel(prevIndex);
-        resetAutoPlay();
-    });
-
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            updateCarousel(index);
-            resetAutoPlay();
+    // 3. Event Listeners
+    if (nextButton) {
+        nextButton.addEventListener('click', () => {
+            moveToSlide(currentIndex + 1);
+            resetTimer();
         });
+    }
+
+    if (prevButton) {
+        prevButton.addEventListener('click', () => {
+            moveToSlide(currentIndex - 1);
+            resetTimer();
+        });
+    }
+
+    dotsNav.addEventListener('click', e => {
+        const targetDot = e.target.closest('button');
+        if (!targetDot) return;
+        const targetIndex = dots.findIndex(dot => dot === targetDot);
+        moveToSlide(targetIndex);
+        resetTimer();
     });
 
-    // Auto-play functionality
-    let autoPlayInterval;
-    const startAutoPlay = () => {
-        autoPlayInterval = setInterval(() => {
-            const nextIndex = (currentIndex + 1) % slides.length;
-            updateCarousel(nextIndex);
-        }, 5000); // Change every 5 seconds
-    };
+    // 4. Auto-play
+    let timer;
+    const startTimer = () => {
+        timer = setInterval(() => moveToSlide(currentIndex + 1), 6000); // 6 seconds for better reading time
+    }
+    const resetTimer = () => {
+        clearInterval(timer);
+        startTimer();
+    }
 
-    const resetAutoPlay = () => {
-        clearInterval(autoPlayInterval);
-        startAutoPlay();
-    };
-
-    startAutoPlay();
+    startTimer();
 }
 
 /**
