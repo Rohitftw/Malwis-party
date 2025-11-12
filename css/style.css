@@ -501,6 +501,7 @@ img.hero-bg-img {
     font-weight: 500;
     font-size: 1rem;
     position: relative;
+    color: var(--color-white)
 }
 
 .nav-links a::after {
@@ -610,7 +611,7 @@ img.hero-bg-img {
 .section-header {
     text-align: center;
     max-width: 700px;
-    margin: 0 auto 4rem auto;
+    margin: 0 auto 3.5rem auto;
 }
 /* --- Services Hero Premium --- */
 .services-hero-premium {
@@ -666,9 +667,6 @@ img.hero-bg-img {
 .service-icon {
     font-size: 3rem;
     margin-bottom: 1.5rem;
-    background: var(--gradient-main);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .service-card h3 {
@@ -901,7 +899,6 @@ img.hero-bg-img {
     transform: scale(1.05);
 }
 
-/* The overlay text on the image (like "SAPHIRE ESTATE" in reference) */
 .venue-overlay {
     position: absolute;
     inset: 0;
@@ -912,7 +909,7 @@ img.hero-bg-img {
 }
 .venue-overlay h3 {
     color: #fff;
-    font-family: 'Georgia', serif; /* Or your preferred elegant font */
+    /*font-family: 'Georgia', serif;  Or your preferred elegant font */
     font-size: 2rem;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -929,8 +926,8 @@ img.hero-bg-img {
     background-color: #FAF9F8; /* Very subtle off-white for premium feel */
 }
 .venue-details h4 {
-    font-family: 'Georgia', serif;
-    font-style: italic;
+    /* font-family: 'Georgia', serif;
+    font-style: italic; */
     color: var(--color-navy);
     font-size: 1.5rem;
     margin-bottom: 0.75rem;
@@ -967,9 +964,13 @@ img.hero-bg-img {
 }
 
 /* --- ELEGANT SPLIT TESTIMONIALS --- */
+/* Specific override for Testimonial Heading spacing */
+#testimonials .section-header {
+  margin-bottom: 0rem;
+}
 #testimonials {
     background-color: var(--color-white);
-    padding: 8rem 0;
+    padding: 3rem 0;
     overflow: hidden;
 }
 
@@ -1297,7 +1298,7 @@ img.hero-bg-img {
 
 @media (max-width: 768px) {
     .mobile-toggle { display: block; background: none; border: none; cursor: pointer; }
-    .mobile-toggle .bar { display: block; width: 25px; height: 3px; margin: 5px auto; background-color: var(--color-navy); transition: all 0.3s ease-in-out; }
+    .mobile-toggle .bar { display: block; width: 25px; height: 3px; margin: 5px auto; background-color: var(--color-white); transition: all 0.3s ease-in-out; }
     .nav-links { position: fixed; top: var(--nav-height); left: -100%; flex-direction: column; background-color: var(--color-white); width: 100%; padding: 2rem 0; box-shadow: var(--shadow-md); transition: 0.4s ease; align-items: center; }
     .nav-links.active { left: 0; }
     .desktop-only { display: none; }
@@ -1309,6 +1310,20 @@ img.hero-bg-img {
     .carousel-nav { gap: 1rem; }
     /* Center socials on mobile */
     .social-handles { justify-content: center; }
+}
+/* --- Navbar Scrolled Text Colors --- */
+.navbar.scrolled .logo,
+.navbar.scrolled .nav-links a {
+    color: var(--color-navy);
+}
+
+.navbar.scrolled .mobile-toggle .bar {
+    background-color: var(--color-navy);
+}
+
+/* Fix for the active link underline color on scroll */
+.navbar.scrolled .nav-links a::after {
+    background: var(--gradient-main);
 }
 /* ===============================================
  ABOUT PAGE STYLES
@@ -3086,5 +3101,55 @@ img.hero-bg-img {
     .testi-visual {
         margin-left: 2rem;
         height: 300px;
+    }
+}
+/* --- Instagram Feed Section --- */
+.insta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.insta-post {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    aspect-ratio: 1/1; /* Makes it a perfect square */
+}
+
+.insta-post img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.insta-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.5); /* var(--color-navy) with opacity */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: var(--color-white);
+}
+
+.insta-post:hover img {
+    transform: scale(1.1);
+}
+
+.insta-post:hover .insta-overlay {
+    opacity: 1;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+    .insta-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 }
