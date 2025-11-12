@@ -1091,7 +1091,7 @@ img.hero-bg-img {
     display: flex;
     align-items: center;
     gap: 2rem;
-    margin-top: 3rem;
+    margin-top: 0rem;
     margin-left: 4rem; /* Align with text content */
     position: relative;
     z-index: 3;
