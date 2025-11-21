@@ -1,187 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gallery | Malwis Party</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">MALWIS.<span class="logo-accent">PARTY</span></a>
-            <button class="mobile-toggle" aria-label="Toggle Navigation" id="mobile-toggle"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="booking.html">Book Now</a></li>
-                <li class="mobile-only"><a href="contact.html" class="btn btn-primary">Contact</a></li>
-            </ul>
-            <div class="nav-cta desktop-only">
-                <a href="contact.html" class="btn btn-primary">Contact</a>
-            </div>
+      <div class="container nav-container">
+        <a href="index.html" class="logo">MALWIS.<span class="logo-accent">PARTY</span></a>
+        <button class="mobile-toggle" aria-label="Toggle Navigation" id="mobile-toggle">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html" data-lang="nav-home">Home</a></li>
+          <li><a href="about.html" data-lang="nav-about">About</a></li>
+          <li><a href="services.html" data-lang="nav-services">Services</a></li>
+          <li><a href="gallery.html" data-lang="nav-gallery">Gallery</a></li>
+          <li><a href="booking.html" data-lang="nav-book">Book Now</a></li>
+          <li class="mobile-only">
+            <button class="btn btn-outline-white btn-sm lang-toggle" data-lang-btn="mobile">NL</button>
+          </li>
+          <li class="mobile-only"><a href="contact.html" class="btn btn-primary" data-lang="nav-contact">Contact</a></li>
+        </ul>
+        <div class="nav-cta desktop-only" style="display: flex; gap: 10px; align-items: center">
+          <button
+            class="btn btn-primary btn-sm lang-toggle"
+            id="desktop-lang-btn"
+            data-lang-btn="desktop"
+            style="min-width: 50px; padding: 0.6rem 1rem"
+          >
+            NL
+          </button>
+          <a href="contact.html" class="btn btn-primary" data-lang="nav-contact">Contact</a>
         </div>
+      </div>
     </nav>
 
-
     <main>
-        <section class="page-hero gallery-hero-premium">
-            <div class="hero-bg">
-                <img src="assests/gallery/hero.png" alt="Vibrant party atmosphere" class="hero-bg-img">
-                <div class="hero-gradient-overlay"></div>
-            </div>
-            <div class="container hero-content-overlay text-center">
-                <h1 class="hero-title-large animate-fade-up">
-                    Our <span class="gradient-text">Gallery</span>
-                </h1>
-                <p class="hero-subtitle-large animate-fade-up delay-200">
-                    Real events, real energy. See how we bring visions to life.
-                </p>
-                <div class="hero-cta-buttons animate-fade-up delay-300">
-                    <a href="#instagram" class="btn btn-outline-white btn-large">Follow on Instagram</a>
-                </div>
-            </div>
-        </section>
-        <section id="gallery-main" class="section-padding">
-            <div class="container">
-                <div class="gallery-filters animate-fade-up delay-100" role="tablist" aria-label="Gallery filters">
-                    <button class="filter-pill active" role="tab" aria-selected="true" aria-controls="gallery-grid" data-filter="all">All</button>
-                    <button class="filter-pill" role="tab" aria-selected="false" aria-controls="gallery-grid" data-filter="corporate">Corporate</button>
-                    <button class="filter-pill" role="tab" aria-selected="false" aria-controls="gallery-grid" data-filter="weddings">Weddings</button>
-                    <button class="filter-pill" role="tab" aria-selected="false" aria-controls="gallery-grid" data-filter="private">Private Parties</button>
-                </div>
+      <section class="page-hero gallery-hero-premium">
+        <div class="hero-bg">
+          <img src="assests/gallery/hero.png" alt="Vibrant party atmosphere" class="hero-bg-img" />
+          <div class="hero-gradient-overlay"></div>
+        </div>
+        <div class="container hero-content-overlay text-center">
+          <h1 class="hero-title-large animate-fade-up" data-lang="gal-hero-title">Our <span class="gradient-text">Gallery</span></h1>
+          <p class="hero-subtitle-large animate-fade-up delay-200" data-lang="gal-hero-subtitle">
+            Real events, real energy. See how we bring visions to life.
+          </p>
+          <div class="hero-cta-buttons animate-fade-up delay-300">
+            <a href="#instagram" class="btn btn-outline-white btn-large" data-lang="gal-hero-btn">Follow on Instagram</a>
+          </div>
+        </div>
+      </section>
+      <section id="gallery-main" class="section-padding">
+        <div class="container">
+          <div class="gallery-filters animate-fade-up delay-100" role="tablist" aria-label="Gallery filters">
+            <button class="filter-pill active" role="tab" aria-selected="true" aria-controls="gallery-grid" data-filter="all" data-lang="filter-all">
+              All
+            </button>
+            <button class="filter-pill" role="tab" aria-selected="false" aria-controls="gallery-grid" data-filter="corporate" data-lang="filter-corp">
+              Corporate
+            </button>
+            <button class="filter-pill" role="tab" aria-selected="false" aria-controls="gallery-grid" data-filter="weddings" data-lang="filter-wed">
+              Weddings
+            </button>
+            <button class="filter-pill" role="tab" aria-selected="false" aria-controls="gallery-grid" data-filter="private" data-lang="filter-priv">
+              Private Parties
+            </button>
+          </div>
 
-                <div id="gallery-grid" class="gallery-masonry animate-fade-up delay-200">
-                    <figure class="gallery-item" data-category="corporate">
-                        <button class="gallery-thumb" data-index="0" aria-label="View image">
-                            <img src="assests/gallery/corporate_gala.png" alt="Corporate Gala">
-                            <figcaption class="gallery-caption">
-                                <h4>TechCorp Annual Gala</h4>
-                                <p>Corporate</p>
-                            </figcaption>
-                        </button>
-                    </figure>
-                    <figure class="gallery-item" data-category="weddings">
-                        <button class="gallery-thumb" data-index="1" aria-label="View image">
-                            <img src="assests/gallery/elegant.png" alt="Wedding Table Details">
-                            <figcaption class="gallery-caption">
-                                <h4>Elegant Reception Details</h4>
-                                <p>Weddings</p>
-                            </figcaption>
-                        </button>
-                    </figure>
-                    <figure class="gallery-item" data-category="private">
-                        <button class="gallery-thumb" data-index="2" aria-label="View image">
-                            <img src="assests/gallery/rooftop-sunset.png" alt="Rooftop Party">
-                            <figcaption class="gallery-caption">
-                                <h4>Rooftop Sunset Soiree</h4>
-                                <p>Private Parties</p>
-                            </figcaption>
-                        </button>
-                    </figure>
-                    <figure class="gallery-item" data-category="corporate">
-                        <button class="gallery-thumb" data-index="3" aria-label="View image">
-                            <img src="assests/gallery/futuretech.png" alt="Conference Keynote">
-                            <figcaption class="gallery-caption">
-                                <h4>FutureTech Conference</h4>
-                                <p>Corporate</p>
-                            </figcaption>
-                        </button>
-                    </figure>
-                     <figure class="gallery-item" data-category="weddings">
-                        <button class="gallery-thumb" data-index="4" aria-label="View image">
-                            <img src="assests/gallery/first-dance.png" alt="Wedding First Dance">
-                            <figcaption class="gallery-caption">
-                                <h4>First Dance Moment</h4>
-                                <p>Weddings</p>
-                            </figcaption>
-                        </button>
-                    </figure>
-                    <figure class="gallery-item" data-category="private">
-                        <button class="gallery-thumb" data-index="5" aria-label="View image">
-                            <img src="assests/gallery/neon-birthday-bash.png" alt="DJ Performance">
-                            <figcaption class="gallery-caption">
-                                <h4>Neon Birthday Bash</h4>
-                                <p>Private Parties</p>
-                            </figcaption>
-                        </button>
-                    </figure>
-                     <figure class="gallery-item" data-category="corporate">
-                        <button class="gallery-thumb" data-index="6" aria-label="View image">
-                            <img src="assests/gallery/annual-network.png" alt="Networking Event">
-                            <figcaption class="gallery-caption">
-                                <h4>Annual Networking Mixer</h4>
-                                <p>Corporate</p>
-                            </figcaption>
-                        </button>
-                    </figure>
-                </div>
-            </div>
-        </section>
+          <div id="gallery-grid" class="gallery-masonry animate-fade-up delay-200">
+            <figure class="gallery-item" data-category="corporate">
+              <button class="gallery-thumb" data-index="0" aria-label="View image">
+                <img src="assests/gallery/corporate_gala.png" alt="Corporate Gala" />
+                <figcaption class="gallery-caption">
+                  <h4 data-lang="img-1-title">TechCorp Annual Gala</h4>
+                  <p data-lang="filter-corp">Corporate</p>
+                </figcaption>
+              </button>
+            </figure>
+            <figure class="gallery-item" data-category="weddings">
+              <button class="gallery-thumb" data-index="1" aria-label="View image">
+                <img src="assests/gallery/elegant.png" alt="Wedding Table Details" />
+                <figcaption class="gallery-caption">
+                  <h4 data-lang="img-2-title">Elegant Reception Details</h4>
+                  <p data-lang="filter-wed">Weddings</p>
+                </figcaption>
+              </button>
+            </figure>
+            <figure class="gallery-item" data-category="private">
+              <button class="gallery-thumb" data-index="2" aria-label="View image">
+                <img src="assests/gallery/rooftop-sunset.png" alt="Rooftop Party" />
+                <figcaption class="gallery-caption">
+                  <h4 data-lang="img-3-title">Rooftop Sunset Soiree</h4>
+                  <p data-lang="filter-priv">Private Parties</p>
+                </figcaption>
+              </button>
+            </figure>
+            <figure class="gallery-item" data-category="corporate">
+              <button class="gallery-thumb" data-index="3" aria-label="View image">
+                <img src="assests/gallery/futuretech.png" alt="Conference Keynote" />
+                <figcaption class="gallery-caption">
+                  <h4 data-lang="img-4-title">FutureTech Conference</h4>
+                  <p data-lang="filter-corp">Corporate</p>
+                </figcaption>
+              </button>
+            </figure>
+            <figure class="gallery-item" data-category="weddings">
+              <button class="gallery-thumb" data-index="4" aria-label="View image">
+                <img src="assests/gallery/first-dance.png" alt="Wedding First Dance" />
+                <figcaption class="gallery-caption">
+                  <h4 data-lang="img-5-title">First Dance Moment</h4>
+                  <p data-lang="filter-wed">Weddings</p>
+                </figcaption>
+              </button>
+            </figure>
+            <figure class="gallery-item" data-category="private">
+              <button class="gallery-thumb" data-index="5" aria-label="View image">
+                <img src="assests/gallery/neon-birthday-bash.png" alt="DJ Performance" />
+                <figcaption class="gallery-caption">
+                  <h4 data-lang="img-6-title">Neon Birthday Bash</h4>
+                  <p data-lang="filter-priv">Private Parties</p>
+                </figcaption>
+              </button>
+            </figure>
+            <figure class="gallery-item" data-category="corporate">
+              <button class="gallery-thumb" data-index="6" aria-label="View image">
+                <img src="assests/gallery/annual-network.png" alt="Networking Event" />
+                <figcaption class="gallery-caption">
+                  <h4 data-lang="img-7-title">Annual Networking Mixer</h4>
+                  <p data-lang="filter-corp">Corporate</p>
+                </figcaption>
+              </button>
+            </figure>
+          </div>
+        </div>
+      </section>
 
-        <!-- <section class="cta-band section-padding text-center animate-fade-up">
-            <div class="container">
-                <h2>Inspired by what you see?</h2>
-                <p style="color: rgba(255,255,255,0.9); margin-bottom: 2rem;">Let's create something even better for your next event.</p>
-                <a href="booking.html" class="btn btn-primary-dark">Start Planning</a>
+      <section class="section-padding">
+        <div class="container">
+          <div class="cta-panel-premium animate-fade-up">
+            <div class="cta-content">
+              <h2 class="cta-title" data-lang="gal-cta-title">Inspired by what you see?</h2>
+              <p class="cta-text" data-lang="gal-cta-text">Let's create something even better for your next event.</p>
+              <a href="booking.html" class="btn btn-primary-dark btn-large" data-lang="gal-cta-btn">Get a Custom Quote</a>
             </div>
-        </section> -->
-        <section class="section-padding">
-            <div class="container">
-                <div class="cta-panel-premium animate-fade-up">
-                    <div class="cta-content">
-                        <h2 class="cta-title">Inspired by what you see?</h2>
-                        <p class="cta-text">Let's create something even better for your next event.</p>
-                        <a href="booking.html" class="btn btn-primary-dark btn-large">Get a Custom Quote</a>
-                    </div>
-                    <div class="cta-visual">
-                        <div class="circle-1"></div>
-                        <div class="circle-2"></div>
-                    </div>
-                </div>
+            <div class="cta-visual">
+              <div class="circle-1"></div>
+              <div class="circle-2"></div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
     </main>
 
     <div id="lightbox" class="lightbox-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption">
-        <div class="lightbox-container">
-            <button class="lightbox-close" aria-label="Close gallery">&times;</button>
-            <figure class="lightbox-figure">
-                <img src="" alt="" id="lightbox-img">
-                <figcaption>
-                    <span id="lightbox-caption"></span>
-                    <span id="lightbox-counter" aria-hidden="true"></span>
-                </figcaption>
-            </figure>
-            <button class="lightbox-nav prev" aria-label="Previous image">←</button>
-            <button class="lightbox-nav next" aria-label="Next image">→</button>
-        </div>
+      <div class="lightbox-container">
+        <button class="lightbox-close" aria-label="Close gallery">&times;</button>
+        <figure class="lightbox-figure">
+          <img src="" alt="" id="lightbox-img" />
+          <figcaption>
+            <span id="lightbox-caption"></span>
+            <span id="lightbox-counter" aria-hidden="true"></span>
+          </figcaption>
+        </figure>
+        <button class="lightbox-nav prev" aria-label="Previous image">←</button>
+        <button class="lightbox-nav next" aria-label="Next image">→</button>
+      </div>
     </div>
 
     <footer id="contact" class="footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <a href="index.html" class="logo">MALWIS.<span class="logo-accent">PARTY</span></a>
-                <p class="footer-tagline">Bringing bright energy to every celebration since 2023.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li></ul>
-            </div>
-            <div class="footer-contact">
-                 <h4>Get in Touch</h4>
-                 <p>123 Celebration Avenue, Metropolis, MP 54321<br>hello@malwis.party | +1 (555) 123-4567</p>
-            </div>
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">MALWIS.<span class="logo-accent">PARTY</span></a>
+          <p class="footer-tagline" data-lang="footer-tagline">Bringing bright energy to every celebration since 2023.</p>
         </div>
-        <div class="container copyright"><p>© 2025 Malwis Party. All rights reserved.</p></div>
+        <div class="footer-links">
+          <h4 data-lang="footer-links">Quick Links</h4>
+          <ul>
+            <li><a href="index.html" data-lang="nav-home">Home</a></li>
+            <li><a href="about.html" data-lang="nav-about">About</a></li>
+            <li><a href="services.html" data-lang="nav-services">Services</a></li>
+            <li><a href="gallery.html" data-lang="nav-gallery">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4 data-lang="footer-touch">Get in Touch</h4>
+          <p>123 Celebration Avenue, Metropolis, MP 54321<br />hello@malwis.party | +1 (555) 123-4567</p>
+        </div>
+      </div>
+      <div class="container copyright"><p>© 2025 Malwis Party. All rights reserved.</p></div>
     </footer>
 
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>

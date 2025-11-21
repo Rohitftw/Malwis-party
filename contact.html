@@ -1,160 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us | Malwis Party</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">MALWIS.<span class="logo-accent">PARTY</span></a>
-            <button class="mobile-toggle" aria-label="Toggle Navigation" id="mobile-toggle"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="booking.html">Book Now</a></li>
-                <li class="mobile-only"><a href="contact.html" class="btn btn-primary">Contact</a></li>
-            </ul>
-            <div class="nav-cta desktop-only">
-                <a href="contact.html" class="btn btn-primary">Contact</a>
-            </div>
+      <div class="container nav-container">
+        <a href="index.html" class="logo">MALWIS.<span class="logo-accent">PARTY</span></a>
+        <button class="mobile-toggle" aria-label="Toggle Navigation" id="mobile-toggle">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html" data-lang="nav-home">Home</a></li>
+          <li><a href="about.html" data-lang="nav-about">About</a></li>
+          <li><a href="services.html" data-lang="nav-services">Services</a></li>
+          <li><a href="gallery.html" data-lang="nav-gallery">Gallery</a></li>
+          <li><a href="booking.html" data-lang="nav-book">Book Now</a></li>
+          <li class="mobile-only">
+            <button class="btn btn-outline-white btn-sm lang-toggle" data-lang-btn="mobile">NL</button>
+          </li>
+          <li class="mobile-only"><a href="contact.html" class="btn btn-primary" data-lang="nav-contact">Contact</a></li>
+        </ul>
+        <div class="nav-cta desktop-only" style="display: flex; gap: 10px; align-items: center">
+          <button
+            class="btn btn-primary btn-sm lang-toggle"
+            id="desktop-lang-btn"
+            data-lang-btn="desktop"
+            style="min-width: 50px; padding: 0.6rem 1rem"
+          >
+            NL
+          </button>
+          <a href="contact.html" class="btn btn-primary" data-lang="nav-contact">Contact</a>
         </div>
+      </div>
     </nav>
 
-
     <main>
-        <section class="page-hero contact-hero">
-            <div class="hero-bg-glow"></div>
-            <div class="container animate-fade-up">
-                <h1 class="hero-title">Contact <span class="gradient-text">Us</span></h1>
-                <p class="hero-subtitle">Questions? Quotes? Let’s plan something memorable.</p>
-            </div>
-        </section>
+      <section class="page-hero contact-hero">
+        <div class="hero-bg-glow"></div>
+        <div class="container animate-fade-up">
+          <h1 class="hero-title" data-lang="contact-hero-title">Contact <span class="gradient-text">Us</span></h1>
+          <p class="hero-subtitle" data-lang="contact-hero-subtitle">Questions? Quotes? Let’s plan something memorable.</p>
+        </div>
+      </section>
 
-        <section id="contact-main" class="section-padding">
-            <div class="container contact-grid">
-                <div class="contact-info animate-fade-up delay-100">
-                    <div class="info-cards">
-                        <div class="info-card">
-                            <div class="info-icon">📍</div>
-                            <h3>Visit Us</h3>
-                            <p>123 Celebration Avenue<br>Metropolis, MP 54321</p>
-                            <p class="info-hours">Mon-Fri: 9am - 6pm<br>Sat: 10am - 4pm</p>
-                            <button class="text-link-btn" data-modal-target="#map-modal" aria-label="Open map modal">View on Map →</button>
-                        </div>
-                        <div class="info-card">
-                            <div class="info-icon">✉️</div>
-                            <h3>Email Us</h3>
-                            <p><a href="mailto:hello@malwis.party" class="contact-link">hello@malwis.party</a></p>
-                            <p class="info-note">We typically reply within 24 hours.</p>
-                        </div>
-                        <div class="info-card">
-                            <div class="info-icon">📞</div>
-                            <h3>Call Us</h3>
-                            <p><a href="tel:+15551234567" class="contact-link">+1 (555) 123-4567</a></p>
-                            <p class="info-note">Available during business hours.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact-form-wrapper animate-fade-up delay-200">
-                    <div class="form-card">
-                        <h2>Send a Message</h2>
-                        <form id="contact-form" novalidate>
-                            <div class="form-group honeypot" aria-hidden="true">
-                                <label for="contact-url">Website</label>
-                                <input type="text" id="contact-url" name="url" tabindex="-1" autocomplete="off">
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="contact-name">Name *</label>
-                                    <input type="text" id="contact-name" required minlength="2" placeholder="Jane Doe" aria-describedby="name-error">
-                                    <span id="name-error" class="error-msg" aria-live="polite"></span>
-                                </div>
-                                <div class="form-group">
-                                    <label for="contact-phone">Phone *</label>
-                                    <input type="tel" id="contact-phone" required pattern="[0-9+\-\s()]{7,}" placeholder="+1 (555) 000-0000" aria-describedby="phone-error">
-                                    <span id="phone-error" class="error-msg" aria-live="polite"></span>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="contact-email">Email *</label>
-                                <input type="email" id="contact-email" required placeholder="jane@example.com" aria-describedby="email-error">
-                                <span id="email-error" class="error-msg" aria-live="polite"></span>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="contact-date">Event Date (Optional)</label>
-                                <input type="date" id="contact-date" aria-describedby="date-help">
-                                <span id="date-help" class="help-text">Preferred date for your event if known.</span>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="contact-message">Message *</label>
-                                <textarea id="contact-message" required minlength="20" rows="5" placeholder="Tell us about your event..." aria-describedby="message-error"></textarea>
-                                <span id="message-error" class="error-msg" aria-live="polite"></span>
-                            </div>
-
-                            <div class="form-group checkbox-group">
-                                <input type="checkbox" id="contact-agree" required aria-describedby="agree-error">
-                                <label for="contact-agree">I agree to be contacted about my request. *</label>
-                                <span id="agree-error" class="error-msg" aria-live="polite"></span>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary btn-full" id="contact-submit">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container recent-inquiries-panel animate-fade-up delay-300">
-                <button id="toggle-inquiries-btn" class="toggle-inquiries-btn" aria-expanded="false">
-                    <span>Your Recent Inquiries</span><span class="toggle-icon">↓</span>
+      <section id="contact-main" class="section-padding">
+        <div class="container contact-grid">
+          <div class="contact-info animate-fade-up delay-100">
+            <div class="info-cards">
+              <div class="info-card">
+                <div class="info-icon">📍</div>
+                <h3 data-lang="info-visit-title">Visit Us</h3>
+                <p>123 Celebration Avenue<br />Metropolis, MP 54321</p>
+                <p class="info-hours" data-lang="info-visit-hours">Mon-Fri: 9am - 6pm<br />Sat: 10am - 4pm</p>
+                <button class="text-link-btn" data-modal-target="#map-modal" aria-label="Open map modal" data-lang="btn-view-map">
+                  View on Map →
                 </button>
-                <div id="inquiries-list" class="inquiries-list" hidden>
-                    <p class="no-inquiries-msg">No recent inquiries found on this device.</p>
-                </div>
+              </div>
+              <div class="info-card">
+                <div class="info-icon">✉️</div>
+                <h3 data-lang="info-email-title">Email Us</h3>
+                <p><a href="mailto:hello@malwis.party" class="contact-link">hello@malwis.party</a></p>
+                <p class="info-note" data-lang="info-email-note">We typically reply within 24 hours.</p>
+              </div>
+              <div class="info-card">
+                <div class="info-icon">📞</div>
+                <h3 data-lang="info-call-title">Call Us</h3>
+                <p><a href="tel:+15551234567" class="contact-link">+1 (555) 123-4567</a></p>
+                <p class="info-note" data-lang="info-call-note">Available during business hours.</p>
+              </div>
             </div>
-        </section>
+          </div>
+
+          <div class="contact-form-wrapper animate-fade-up delay-200">
+            <div class="form-card">
+              <h2 data-lang="form-title">Send a Message</h2>
+              <form id="contact-form" novalidate>
+                <div class="form-group honeypot" aria-hidden="true">
+                  <label for="contact-url">Website</label>
+                  <input type="text" id="contact-url" name="url" tabindex="-1" autocomplete="off" />
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="contact-name" data-lang="lbl-name">Name *</label>
+                    <input type="text" id="contact-name" required minlength="2" placeholder="Jane Doe" aria-describedby="name-error" />
+                    <span id="name-error" class="error-msg" aria-live="polite"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="contact-phone" data-lang="lbl-phone">Phone *</label>
+                    <input
+                      type="tel"
+                      id="contact-phone"
+                      required
+                      pattern="[0-9+\-\s()]{7,}"
+                      placeholder="+1 (555) 000-0000"
+                      aria-describedby="phone-error"
+                    />
+                    <span id="phone-error" class="error-msg" aria-live="polite"></span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-email" data-lang="lbl-email">Email *</label>
+                  <input type="email" id="contact-email" required placeholder="jane@example.com" aria-describedby="email-error" />
+                  <span id="email-error" class="error-msg" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-date" data-lang="lbl-date">Event Date (Optional)</label>
+                  <input type="date" id="contact-date" aria-describedby="date-help" />
+                  <span id="date-help" class="help-text" data-lang="help-date">Preferred date for your event if known.</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-message" data-lang="lbl-message">Message *</label>
+                  <textarea
+                    id="contact-message"
+                    required
+                    minlength="20"
+                    rows="5"
+                    placeholder="Tell us about your event..."
+                    aria-describedby="message-error"
+                  ></textarea>
+                  <span id="message-error" class="error-msg" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group checkbox-group">
+                  <input type="checkbox" id="contact-agree" required aria-describedby="agree-error" />
+                  <label for="contact-agree" data-lang="lbl-agree">I agree to be contacted about my request. *</label>
+                  <span id="agree-error" class="error-msg" aria-live="polite"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full" id="contact-submit" data-lang="btn-send">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="container recent-inquiries-panel animate-fade-up delay-300">
+          <button id="toggle-inquiries-btn" class="toggle-inquiries-btn" aria-expanded="false">
+            <span data-lang="rec-inq-title">Your Recent Inquiries</span><span class="toggle-icon">↓</span>
+          </button>
+          <div id="inquiries-list" class="inquiries-list" hidden>
+            <p class="no-inquiries-msg" data-lang="no-inq-msg">No recent inquiries found on this device.</p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <div id="map-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="map-modal-title">
-        <div class="modal-container map-modal-content">
-            <button class="modal-close" aria-label="Close map">&times;</button>
-            <h3 id="map-modal-title" class="visually-hidden">Our Location</h3>
-            <div class="map-wrapper">
-                <img src="https://via.placeholder.com/800x600/e2e8f0/64748b?text=Map+Placeholder" alt="Map showing location at 123 Celebration Avenue, Metropolis" class="map-placeholder">
-            </div>
+      <div class="modal-container map-modal-content">
+        <button class="modal-close" aria-label="Close map">&times;</button>
+        <h3 id="map-modal-title" class="visually-hidden">Our Location</h3>
+        <div class="map-wrapper">
+          <img
+            src="https://via.placeholder.com/800x600/e2e8f0/64748b?text=Map+Placeholder"
+            alt="Map showing location at 123 Celebration Avenue, Metropolis"
+            class="map-placeholder"
+          />
         </div>
+      </div>
     </div>
 
     <div id="toast-container" class="toast-container" aria-live="polite"></div>
 
     <footer id="contact-footer" class="footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <a href="index.html" class="logo">MALWIS.<span class="logo-accent">PARTY</span></a>
-                <p class="footer-tagline">Bringing bright energy to every celebration since 2023.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li></ul>
-            </div>
-            <div class="footer-contact">
-                 <h4>Get in Touch</h4>
-                 <p>123 Celebration Avenue, Metropolis, MP 54321<br>hello@malwis.party | +1 (555) 123-4567</p>
-            </div>
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">MALWIS.<span class="logo-accent">PARTY</span></a>
+          <p class="footer-tagline" data-lang="footer-tagline">Bringing bright energy to every celebration since 2023.</p>
         </div>
-        <div class="container copyright"><p>© 2025 Malwis Party. All rights reserved.</p></div>
+        <div class="footer-links">
+          <h4 data-lang="footer-links">Quick Links</h4>
+          <ul>
+            <li><a href="index.html" data-lang="nav-home">Home</a></li>
+            <li><a href="about.html" data-lang="nav-about">About</a></li>
+            <li><a href="services.html" data-lang="nav-services">Services</a></li>
+            <li><a href="gallery.html" data-lang="nav-gallery">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4 data-lang="footer-touch">Get in Touch</h4>
+          <p>123 Celebration Avenue, Metropolis, MP 54321<br />hello@malwis.party | +1 (555) 123-4567</p>
+        </div>
+      </div>
+      <div class="container copyright"><p>© 2025 Malwis Party. All rights reserved.</p></div>
     </footer>
 
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>

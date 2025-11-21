@@ -14,9 +14,9 @@
     <div id="intro-overlay" class="intro-overlay">
         <div class="intro-content">
             <h1 class="intro-logo">MALWIS<span class="logo-accent pulse">.PARTY</span></h1>
-            <p class="intro-text">Experience the unforgettable.</p>
+            <p class="intro-text" data-lang="intro-text">Experience the unforgettable.</p>
             <div class="scroll-indicator">
-                <span>Scroll to Enter</span>
+                <span data-lang="scroll-text">Scroll to Enter</span>
                 <div class="mouse">
                     <div class="wheel"></div>
                 </div>
@@ -35,46 +35,48 @@
                 <span class="bar"></span>
             </button>
             <ul class="nav-links" id="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="booking.html">Book Now</a></li>
-                <li class="mobile-only"><a href="contact.html" class="btn btn-primary">Contact</a></li>
+                <li><a href="index.html" data-lang="nav-home">Home</a></li>
+                <li><a href="about.html" data-lang="nav-about">About</a></li>
+                <li><a href="services.html" data-lang="nav-services">Services</a></li>
+                <li><a href="gallery.html" data-lang="nav-gallery">Gallery</a></li>
+                <li><a href="booking.html" data-lang="nav-book">Book Now</a></li>
+                <li class="mobile-only">
+                    <button class="btn btn-outline-white btn-sm lang-toggle" data-lang-btn="mobile">NL</button>
+                </li>
+                <li class="mobile-only"><a href="contact.html" class="btn btn-primary" data-lang="nav-contact">Contact</a></li>
             </ul>
-            <div class="nav-cta desktop-only">
-                <a href="contact.html" class="btn btn-primary">Contact</a>
+            <div class="nav-cta desktop-only" style="display: flex; gap: 10px; align-items: center;">
+                <button class="btn btn-primary btn-sm lang-toggle" id="desktop-lang-btn" data-lang-btn="desktop" style="min-width: 50px; padding: 0.6rem 1rem;">NL</button>
+                <a href="contact.html" class="btn btn-primary" data-lang="nav-contact">Contact</a>
             </div>
         </div>
     </nav>
 
     <main>
         <section id="home" class="hero-fullscreen">
-            <<div class="hero-bg">
+            <div class="hero-bg">
                 <img src="assests/homebg.png" alt="Hero Background" class="hero-bg-img">
                 <div class="hero-gradient-overlay"></div>
             </div>
             <div class="container hero-content-overlay">
-                <!-- <div class="hero-logo-text">
-                    <span class="logo-malwis">MALWIS.</span><span class="logo-party">PARTY</span>
-                </div> -->
-                <h1 class="hero-tagline">Your Vision, Our Stage.<br>Unforgettable Events Begin Here.</h1>
-                <p class="hero-description">
+                <h1 class="hero-tagline" data-lang="hero-tagline">Your Vision, Our Stage.<br>Unforgettable Events Begin Here.</h1>
+                <p class="hero-description" data-lang="hero-desc">
                     Crafting bespoke experiences in stunning venues. Let us bring your dream event to life.
                 </p>
                 <div class="hero-cta-buttons">
-                    <a href="#contact" class="btn btn-primary btn-large">Get a Quote</a>
-                    <a href="gallery.html" class="btn btn-outline-white btn-large">View Gallery</a>
+                    <a href="#contact" class="btn btn-primary btn-large" data-lang="hero-cta-quote">Get a Quote</a>
+                    <a href="gallery.html" class="btn btn-outline-white btn-large" data-lang="hero-cta-gallery">View Gallery</a>
                 </div>
             </div>
         </section>
+
         <section id="about" class="about section-padding bg-offwhite">
             <div class="container about-container">
                 <div class="about-text animate-fade-up">
-                    <h2 class="section-title">More Than Just a Venue.</h2>
-                    <p>Founded in 2023, Malwis Party was built on a simple premise: celebrations deserve a space that is as energetic and bright as the people hosting them.</p>
-                    <p>We ditched the stuffy ballrooms for modern design, adaptable lighting, and a premium support team dedicated to your vision.</p>
-                    <a href="about.html" class="text-link">Meet the Team →</a>
+                    <h2 class="section-title" data-lang="about-title">More Than Just a Venue.</h2>
+                    <p data-lang="about-p1">Founded in 2023, Malwis Party was built on a simple premise: celebrations deserve a space that is as energetic and bright as the people hosting them.</p>
+                    <p data-lang="about-p2">We ditched the stuffy ballrooms for modern design, adaptable lighting, and a premium support team dedicated to your vision.</p>
+                    <a href="about.html" class="text-link" data-lang="about-link">Meet the Team →</a>
                 </div>
                 <div class="about-visual animate-fade-up delay-200">
                     <div class="blob-shape"></div>
@@ -86,47 +88,37 @@
         <section id="services" class="services section-padding">
             <div class="container">
                 <div class="section-header animate-fade-up">
-                    <h2 class="section-title">Crafted for Every Occasion</h2>
-                    <p class="section-subtitle">We blend versatile spaces with premium service to make your event flawless.</p>
+                    <h2 class="section-title" data-lang="services-title">Crafted for Every Occasion</h2>
+                    <p class="section-subtitle" data-lang="services-subtitle">We blend versatile spaces with premium service to make your event flawless.</p>
                 </div>
                 <div class="services-grid">
                     <div class="service-card animate-fade-up delay-100">
                         <div class="service-icon">🏢</div>
-                        <h3>Corporate Events</h3>
-                        <p>Host impressive product launches, team galas, and network mixers with state-of-the-art AV and polished setups.</p>
-                        <a href="services.html#services-list" class="text-link" style="margin-top: 1rem; display: inline-block;">Learn More →</a>
+                        <h3 data-lang="serv-1-title">Corporate Events</h3>
+                        <p data-lang="serv-1-desc">Host impressive product launches, team galas, and network mixers with state-of-the-art AV and polished setups.</p>
+                        <a href="services.html#services-list" class="text-link" style="margin-top: 1rem; display: inline-block;" data-lang="learn-more">Learn More →</a>
                     </div>
                     <div class="service-card animate-fade-up delay-200">
                         <div class="service-icon">🥂</div>
-                        <h3>Private Parties</h3>
-                        <p>From milestone birthdays to elegant receptions. We provide the vibrant atmosphere, you bring the guests.</p>
-                        <a href="services.html#services-list" class="text-link" style="margin-top: 1rem; display: inline-block;">Learn More →</a>
+                        <h3 data-lang="serv-2-title">Private Parties</h3>
+                        <p data-lang="serv-2-desc">From milestone birthdays to elegant receptions. We provide the vibrant atmosphere, you bring the guests.</p>
+                        <a href="services.html#services-list" class="text-link" style="margin-top: 1rem; display: inline-block;" data-lang="learn-more">Learn More →</a>
                     </div>
                     <div class="service-card animate-fade-up delay-300">
                         <div class="service-icon">🍽️</div>
-                        <h3>Full-Service Catering</h3>
-                        <p>Curated menus, premium bar service, and experienced waitstaff to elevate your guest experience.</p>
-                        <a href="services.html#services-list" class="text-link" style="margin-top: 1rem; display: inline-block;">Learn More →</a>
+                        <h3 data-lang="serv-3-title">Full-Service Catering</h3>
+                        <p data-lang="serv-3-desc">Curated menus, premium bar service, and experienced waitstaff to elevate your guest experience.</p>
+                        <a href="services.html#services-list" class="text-link" style="margin-top: 1rem; display: inline-block;" data-lang="learn-more">Learn More →</a>
                     </div>
                 </div>
             </div>
-            </div> 
-             <!-- <div class="cta-band animate-fade-up delay-400" style="margin-top: 3rem; text-align: center; border-radius: var(--border-radius-lg); padding: 3rem 2rem; box-shadow: var(--shadow-glow);">
-    <h3 style="font-size: 2rem; color: var(--color-white); margin-bottom: 1rem; font-family: var(--font-heading);">See the Full Picture</h3>
-    <p style="color: rgba(255,255,255,0.9); max-width: 500px; margin: 0 auto 2rem auto; font-size: 1.1rem;">
-        These are just our most popular. We offer complete event solutions from AV production to full-service management.
-    </p>
-    <a href="services.html" class="btn btn-primary-dark">Explore All Services</a> -->
-</div>
         </section>
-        
-
 
         <section id="venues" class="section-padding bg-offwhite">
             <div class="container">
                 <div class="section-header animate-fade-up text-center mb-5">
-                    <h2 class="section-title">Our Unique Spaces</h2>
-                    <p class="section-subtitle">Diverse settings for every style of celebration.</p>
+                    <h2 class="section-title" data-lang="venue-title">Our Unique Spaces</h2>
+                    <p class="section-subtitle" data-lang="venue-subtitle">Diverse settings for every style of celebration.</p>
                 </div>
 
                 <div class="venue-grid">
@@ -134,13 +126,13 @@
                         <div class="venue-image">
                             <img src="assests/1sthome.png" alt="Grand Ballroom">
                             <div class="venue-overlay">
-                                <h3>GRAND BALLROOM</h3>
+                                <h3 data-lang="venue-1-name">GRAND BALLROOM</h3>
                             </div>
                         </div>
                         <div class="venue-details">
-                            <h4>Classic Elegance</h4>
-                            <p>Spacious and sophisticated, perfect for large receptions and galas.</p>
-                            <a href="gallery.html" class="btn btn-outline-small">EXPLORE</a>
+                            <h4 data-lang="venue-1-type">Classic Elegance</h4>
+                            <p data-lang="venue-1-desc">Spacious and sophisticated, perfect for large receptions and galas.</p>
+                            <a href="gallery.html" class="btn btn-outline-small" data-lang="btn-explore">EXPLORE</a>
                         </div>
                     </div>
 
@@ -148,13 +140,13 @@
                         <div class="venue-image">
                             <img src="assests/rooftop2nd.jpg" alt="Rooftop Lounge">
                             <div class="venue-overlay">
-                                <h3>ROOFTOP LOUNGE</h3>
+                                <h3 data-lang="venue-2-name">ROOFTOP LOUNGE</h3>
                             </div>
                         </div>
                         <div class="venue-details">
-                            <h4>Modern & Airy</h4>
-                            <p>Stunning city views with a chic, open-air atmosphere for cocktails.</p>
-                            <a href="gallery.html" class="btn btn-outline-small">EXPLORE</a>
+                            <h4 data-lang="venue-2-type">Modern & Airy</h4>
+                            <p data-lang="venue-2-desc">Stunning city views with a chic, open-air atmosphere for cocktails.</p>
+                            <a href="gallery.html" class="btn btn-outline-small" data-lang="btn-explore">EXPLORE</a>
                         </div>
                     </div>
 
@@ -162,28 +154,24 @@
                         <div class="venue-image">
                              <img src="assests/garden.png" alt="The Garden">
                             <div class="venue-overlay">
-                                <h3>THE GARDEN</h3>
+                                <h3 data-lang="venue-3-name">THE GARDEN</h3>
                             </div>
                         </div>
                         <div class="venue-details">
-                            <h4>Outdoor Romance</h4>
-                            <p>Lush greenery and intimate lighting for ceremonies and garden parties.</p>
-                            <a href="gallery.html" class="btn btn-outline-small">EXPLORE</a>
+                            <h4 data-lang="venue-3-type">Outdoor Romance</h4>
+                            <p data-lang="venue-3-desc">Lush greenery and intimate lighting for ceremonies and garden parties.</p>
+                            <a href="gallery.html" class="btn btn-outline-small" data-lang="btn-explore">EXPLORE</a>
                         </div>
                     </div>
                 </div>
-                 <!-- <div class="text-center mt-5 animate-fade-up">
-                     <a href="#instagram" class="btn btn-outline">Follow us on Instagram</a>
-                 </div> -->
             </div>
         </section>
 
-<section id="testimonials" class="section-padding">
+        <section id="testimonials" class="section-padding">
             <div class="container">
-
                 <div class="section-header animate-fade-up">
-                    <h2 class="section-title">What Our Clients Say</h2>
-                    <p class="section-subtitle">Real stories from our successful partnerships.</p>
+                    <h2 class="section-title" data-lang="testi-title">What Our Clients Say</h2>
+                    <p class="section-subtitle" data-lang="testi-subtitle">Real stories from our successful partnerships.</p>
                 </div>
                 <div class="testimonial-carousel">
                     <div class="testimonial-track" id="testimonial-track">
@@ -192,12 +180,12 @@
                             <div class="testi-split-layout">
                                 <div class="testi-card">
                                     <div class="testi-quote-icon">“</div>
-                                    <p class="testi-text">
+                                    <p class="testi-text" data-lang="testi-1-text">
                                         MALWIS.PARTY exceeded expectations for our wedding reception. Every detail was perfect, and the atmosphere was magical. We wouldn't change a single thing about our experience!
                                     </p>
                                     <div class="testi-author">
                                         <h4>SARAH & TOM</h4>
-                                        <span>Bride & Groom</span>
+                                        <span data-lang="testi-1-role">Bride & Groom</span>
                                     </div>
                                 </div>
                                 <div class="testi-image">
@@ -210,12 +198,12 @@
                             <div class="testi-split-layout">
                                 <div class="testi-card">
                                     <div class="testi-quote-icon">“</div>
-                                    <p class="testi-text">
+                                    <p class="testi-text" data-lang="testi-2-text">
                                         Professional, punctual, and incredibly creative. Our annual corporate gala has never looked this good. The team handled everything so we could actually enjoy the night.
                                     </p>
                                     <div class="testi-author">
                                         <h4>AMANDA RAY</h4>
-                                        <span>TechCorp CEO</span>
+                                        <span data-lang="testi-2-role">TechCorp CEO</span>
                                     </div>
                                 </div>
                                 <div class="testi-image">
@@ -228,12 +216,12 @@
                             <div class="testi-split-layout">
                                 <div class="testi-card">
                                     <div class="testi-quote-icon">“</div>
-                                    <p class="testi-text">
+                                    <p class="testi-text" data-lang="testi-3-text">
                                         Unreal energy! They took my 40th birthday vision and completely 10x'd it. The lighting setup was incredible and the vibe was exactly what I wanted.
                                     </p>
                                     <div class="testi-author">
                                         <h4>DAVID MARTINEZ</h4>
-                                        <span>Private Client</span>
+                                        <span data-lang="testi-3-role">Private Client</span>
                                     </div>
                                 </div>
                                 <div class="testi-image">
@@ -242,7 +230,8 @@
                             </div>
                         </div>
 
-                    </div> <div class="testi-controls">
+                    </div> 
+                    <div class="testi-controls">
                         <button class="carousel-btn prev-btn" aria-label="Previous Slide">←</button>
                         <div class="carousel-nav" id="carousel-dots"></div>
                         <button class="carousel-btn next-btn" aria-label="Next Slide">→</button>
@@ -250,86 +239,87 @@
                 </div>
             </div>
         </section>
+
         <section id="faqs" class="faqs section-padding bg-offwhite">
             <div class="container">
                 <div class="section-header animate-fade-up">
-                    <h2 class="section-title">Frequently Asked Questions</h2>
-                    <p class="section-subtitle">Everything you need to know before booking your date.</p>
+                    <h2 class="section-title" data-lang="faq-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle" data-lang="faq-subtitle">Everything you need to know before booking your date.</p>
                 </div>
                 <div class="faq-grid animate-fade-up delay-100">
                     <div class="faq-item">
                         <button class="faq-question">
-                            <span>What is the venue capacity?</span>
+                            <span data-lang="faq-1-q">What is the venue capacity?</span>
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer">
                             <div class="faq-answer-content">
-                                <p>Our main hall can comfortably accommodate up to 350 guests for a standing reception, or 250 for a seated dinner. We also have smaller, intimate lounge areas perfect for groups of 20-50.</p>
+                                <p data-lang="faq-1-a">Our main hall can comfortably accommodate up to 350 guests for a standing reception, or 250 for a seated dinner. We also have smaller, intimate lounge areas perfect for groups of 20-50.</p>
                             </div>
                         </div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-question">
-                            <span>Do you provide catering services?</span>
+                            <span data-lang="faq-2-q">Do you provide catering services?</span>
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer">
                             <div class="faq-answer-content">
-                                <p>Yes! We offer full-service in-house premium catering with customizable menus. You are also welcome to use one of our approved external catering partners if you have specific culinary requirements.</p>
+                                <p data-lang="faq-2-a">Yes! We offer full-service in-house premium catering with customizable menus. You are also welcome to use one of our approved external catering partners if you have specific culinary requirements.</p>
                             </div>
                         </div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-question">
-                            <span>Can we bring our own DJ or band?</span>
+                            <span data-lang="faq-3-q">Can we bring our own DJ or band?</span>
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer">
                             <div class="faq-answer-content">
-                                <p>Absolutely. We have a dedicated stage and state-of-the-art AV system ready for your performers. We can also provide a list of our resident DJs and artists if you need recommendations.</p>
+                                <p data-lang="faq-3-a">Absolutely. We have a dedicated stage and state-of-the-art AV system ready for your performers. We can also provide a list of our resident DJs and artists if you need recommendations.</p>
                             </div>
                         </div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-question">
-                            <span>Is parking available on-site?</span>
+                            <span data-lang="faq-4-q">Is parking available on-site?</span>
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer">
                             <div class="faq-answer-content">
-                                <p>We have a small private lot for VIPs and vendors (approx. 20 spots). For guests, we offer a managed valet service, and there is a large secure public garage located just one block away.</p>
+                                <p data-lang="faq-4-a">We have a small private lot for VIPs and vendors (approx. 20 spots). For guests, we offer a managed valet service, and there is a large secure public garage located just one block away.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-    </main>
-    <section id="instagram" class="section-padding bg-offwhite">
+
+        <section id="instagram" class="section-padding bg-offwhite">
             <div class="container">
                 <div class="section-header animate-fade-up">
-                    <h2 class="section-title">Follow Our Journey</h2>
-                    <p class="section-subtitle">
+                    <h2 class="section-title" data-lang="insta-title">Follow Our Journey</h2>
+                    <p class="section-subtitle" data-lang="insta-subtitle">
                         Real-time updates and inspiration <a href="#" class="text-link">@malwis.party</a> on Instagram
                     </p>
                 </div>
 
                 <div class="insta-grid animate-fade-up delay-100">
-                    <a href="https://www.instagram.com/p/your-post-url-1/" target="_blank" class="insta-post" aria-label="View on Instagram">
+                    <a href="#" target="_blank" class="insta-post" aria-label="View on Instagram">
                         <img src="assests/home-car/1st.webp" alt="Instagram post 1">
                         <div class="insta-overlay">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                         </div>
                     </a>
 
-                    <a href="https://www.instagram.com/p/your-post-url-2/" target="_blank" class="insta-post" aria-label="View on Instagram">
+                    <a href="#" target="_blank" class="insta-post" aria-label="View on Instagram">
                         <img src="assests/home-car/2nd.png" alt="Instagram post 2">
                         <div class="insta-overlay">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                         </div>
                     </a>
 
-                    <a href="https://www.instagram.com/p/your-post-url-3/" target="_blank" class="insta-post" aria-label="View on Instagram">
+                    <a href="#" target="_blank" class="insta-post" aria-label="View on Instagram">
                         <img src="assests/home-car/3rd.png" alt="Instagram post 3">
                         <div class="insta-overlay">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
@@ -339,49 +329,38 @@
             </div>
         </section>
 
-    <footer id="contact" class="footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <a href="#" class="logo">MALWIS.<span class="logo-accent">PARTY</span></a>
-                <p class="footer-tagline">Bringing bright energy to every celebration since 2023.</p>
-                
-                <div class="social-handles">
-                    <a href="#" aria-label="Instagram" class="social-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                    </a>
-                    <a href="#" aria-label="Facebook" class="social-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                    </a>
-                    <a href="#" aria-label="Twitter" class="social-icon">
-                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
-                    </a>
-                     <a href="#" aria-label="LinkedIn" class="social-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                    </a>
+        <footer id="contact" class="footer">
+            <div class="container footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">MALWIS.<span class="logo-accent">PARTY</span></a>
+                    <p class="footer-tagline" data-lang="footer-tagline">Bringing bright energy to every celebration since 2023.</p>
+                    <div class="social-handles">
+                        <a href="#" aria-label="Instagram" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                        <a href="#" aria-label="Facebook" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                        <a href="#" aria-label="Twitter" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
+                         <a href="#" aria-label="LinkedIn" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4 data-lang="footer-links">Quick Links</h4>
+                    <ul>
+                        <li><a href="#home" data-lang="nav-home">Home</a></li>
+                        <li><a href="#services" data-lang="nav-services">Services</a></li>
+                        <li><a href="#gallery" data-lang="nav-gallery">Gallery</a></li>
+                        <li><a href="#faqs" data-lang="footer-faq">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                     <h4 data-lang="footer-touch">Get in Touch</h4>
+                     <p>123 Celebration Avenue,<br>Metropolis, MP 54321</p>
+                     <p>hello@malwis.party<br>+1 (555) 123-4567</p>
+                     <a href="mailto:hello@malwis.party" class="btn btn-primary footer-btn" data-lang="footer-email-btn">Email Us</a>
                 </div>
             </div>
-
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#faqs">FAQs</a></li>
-                </ul>
+            <div class="container copyright">
+                <p>© 2025 Malwis Party. All rights reserved.</p>
             </div>
-
-            <div class="footer-contact">
-                 <h4>Get in Touch</h4>
-                 <p>123 Celebration Avenue,<br>Metropolis, MP 54321</p>
-                 <p>hello@malwis.party<br>+1 (555) 123-4567</p>
-                 <a href="mailto:hello@malwis.party" class="btn btn-primary footer-btn">Email Us</a>
-            </div>
-        </div>
-        <div class="container copyright">
-            <p>© 2025 Malwis Party. All rights reserved.</p>
-        </div>
-    </footer>
+        </footer>
 
     <script src="js/main.js"></script>
 </body>

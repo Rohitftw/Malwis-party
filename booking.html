@@ -1,195 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Your Event | Malwis Party</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">MALWIS.<span class="logo-accent">PARTY</span></a>
-            <button class="mobile-toggle" aria-label="Toggle Navigation" id="mobile-toggle"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="booking.html">Book Now</a></li>
-                <li class="mobile-only"><a href="contact.html" class="btn btn-primary">Contact</a></li>
-            </ul>
-            <div class="nav-cta desktop-only">
-                <a href="contact.html" class="btn btn-primary">Contact</a>
-            </div>
+      <div class="container nav-container">
+        <a href="index.html" class="logo">MALWIS.<span class="logo-accent">PARTY</span></a>
+        <button class="mobile-toggle" aria-label="Toggle Navigation" id="mobile-toggle">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html" data-lang="nav-home">Home</a></li>
+          <li><a href="about.html" data-lang="nav-about">About</a></li>
+          <li><a href="services.html" data-lang="nav-services">Services</a></li>
+          <li><a href="gallery.html" data-lang="nav-gallery">Gallery</a></li>
+          <li><a href="booking.html" data-lang="nav-book">Book Now</a></li>
+          <li class="mobile-only">
+            <button class="btn btn-outline-white btn-sm lang-toggle" data-lang-btn="mobile">NL</button>
+          </li>
+          <li class="mobile-only"><a href="contact.html" class="btn btn-primary" data-lang="nav-contact">Contact</a></li>
+        </ul>
+        <div class="nav-cta desktop-only" style="display: flex; gap: 10px; align-items: center">
+          <button
+            class="btn btn-primary btn-sm lang-toggle"
+            id="desktop-lang-btn"
+            data-lang-btn="desktop"
+            style="min-width: 50px; padding: 0.6rem 1rem"
+          >
+            NL
+          </button>
+          <a href="contact.html" class="btn btn-primary" data-lang="nav-contact">Contact</a>
         </div>
+      </div>
     </nav>
 
-
     <main>
-        <section class="page-hero booking-hero-premium">
-            <div class="hero-bg">
-                 <img src="assests/book/hero.jpg" alt="Setting the scene for a celebration" class="hero-bg-img">
-                <div class="hero-gradient-overlay"></div>
-            </div>
-            <div class="container hero-content-overlay text-center">
-                <h1 class="hero-title-large animate-fade-up">
-                    Book Your <span class="gradient-text">Celebration</span>
-                </h1>
-                <p class="hero-subtitle-large animate-fade-up delay-200">
-                    Check availability and secure your date instantly. Two premium evening slots available daily.
-                </p>
-            </div>
-        </section>
+      <section class="page-hero booking-hero-premium">
+        <div class="hero-bg">
+          <img src="assests/book/hero.jpg" alt="Setting the scene for a celebration" class="hero-bg-img" />
+          <div class="hero-gradient-overlay"></div>
+        </div>
+        <div class="container hero-content-overlay text-center">
+          <h1 class="hero-title-large animate-fade-up" data-lang="book-hero-title">Book Your <span class="gradient-text">Celebration</span></h1>
+          <p class="hero-subtitle-large animate-fade-up delay-200" data-lang="book-hero-subtitle">
+            Check availability and secure your date instantly. Two premium evening slots available daily.
+          </p>
+        </div>
+      </section>
 
-        <section id="booking-main" class="section-padding bg-offwhite">
-            <div class="container booking-layout">
-                
-                <div class="booking-main-col">
-                     <div class="booking-card calendar-card animate-fade-up delay-100">
-                        <div class="card-header">
-                            <h3>Select a Date</h3>
-                            <div class="calendar-legend">
-                                <span class="legend-item"><span class="dot available"></span> Available</span>
-                                <span class="legend-item"><span class="dot partial"></span> Selling Fast</span>
-                                <span class="legend-item"><span class="dot booked"></span> Fully Booked</span>
-                            </div>
-                        </div>
-                        <div id="calendar-grid" class="calendar-grid" role="grid" aria-label="Event Calendar">
-                            </div>
-                    </div>
-
-                    <div class="recent-bookings-panel animate-fade-up delay-200">
-                        <button id="toggle-bookings-btn" class="toggle-bookings-btn" aria-expanded="false">
-                            <span>Your Recent Bookings</span>
-                            <span class="toggle-icon">↓</span>
-                        </button>
-                        <div id="recent-bookings-list" class="bookings-list" hidden>
-                            <p class="no-bookings-msg">No active bookings found on this device.</p>
-                        </div>
-                    </div>
+      <section id="booking-main" class="section-padding bg-offwhite">
+        <div class="container booking-layout">
+          <div class="booking-main-col">
+            <div class="booking-card calendar-card animate-fade-up delay-100">
+              <div class="card-header">
+                <h3 data-lang="cal-title">Select a Date</h3>
+                <div class="calendar-legend">
+                  <span class="legend-item"><span class="dot available"></span> <span data-lang="leg-avail">Available</span></span>
+                  <span class="legend-item"><span class="dot partial"></span> <span data-lang="leg-fast">Selling Fast</span></span>
+                  <span class="legend-item"><span class="dot booked"></span> <span data-lang="leg-full">Fully Booked</span></span>
                 </div>
-
-                <div class="booking-sidebar animate-fade-up delay-300">
-                    <div class="sidebar-card info-card-premium">
-                        <h3>Why Book Direct?</h3>
-                        <ul class="benefits-list">
-                            <li>
-                                <span class="benefit-icon">⚡</span>
-                                <div>
-                                    <strong>Instant Confirmation</strong>
-                                    <p>Secure your date immediately. No waiting for callbacks.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="benefit-icon">🛡️</span>
-                                <div>
-                                    <strong>Best Rate Guarantee</strong>
-                                    <p>Direct bookings get our lowest venue rates, guaranteed.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="benefit-icon">🎧</span>
-                                <div>
-                                    <strong>Dedicated Support</strong>
-                                    <p>Direct line to our event planning team after booking.</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="sidebar-card process-card">
-                         <h3>How It Works</h3>
-                         <div class="process-steps">
-                             <div class="step">
-                                 <span class="step-num">1</span>
-                                 <p>Select your preferred date from the calendar.</p>
-                             </div>
-                             <div class="step">
-                                 <span class="step-num">2</span>
-                                 <p>Choose an available evening time slot.</p>
-                             </div>
-                             <div class="step">
-                                 <span class="step-num">3</span>
-                                 <p>Enter your details to instantly reserve.</p>
-                             </div>
-                         </div>
-                    </div>
-
-                    <div class="sidebar-help">
-                        <p>Need help with a custom date?</p>
-                        <a href="contact.html" class="text-link">Contact our team →</a>
-                    </div>
-                </div>
-
+              </div>
+              <div id="calendar-grid" class="calendar-grid" role="grid" aria-label="Event Calendar"></div>
             </div>
-        </section>
+
+            <div class="recent-bookings-panel animate-fade-up delay-200">
+              <button id="toggle-bookings-btn" class="toggle-bookings-btn" aria-expanded="false">
+                <span data-lang="rec-book-title">Your Recent Bookings</span>
+                <span class="toggle-icon">↓</span>
+              </button>
+              <div id="recent-bookings-list" class="bookings-list" hidden>
+                <p class="no-bookings-msg" data-lang="no-book-msg">No active bookings found on this device.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="booking-sidebar animate-fade-up delay-300">
+            <div class="sidebar-card info-card-premium">
+              <h3 data-lang="why-title">Why Book Direct?</h3>
+              <ul class="benefits-list">
+                <li>
+                  <span class="benefit-icon">⚡</span>
+                  <div>
+                    <strong data-lang="ben-1-title">Instant Confirmation</strong>
+                    <p data-lang="ben-1-desc">Secure your date immediately. No waiting for callbacks.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="benefit-icon">🛡️</span>
+                  <div>
+                    <strong data-lang="ben-2-title">Best Rate Guarantee</strong>
+                    <p data-lang="ben-2-desc">Direct bookings get our lowest venue rates, guaranteed.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="benefit-icon">🎧</span>
+                  <div>
+                    <strong data-lang="ben-3-title">Dedicated Support</strong>
+                    <p data-lang="ben-3-desc">Direct line to our event planning team after booking.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="sidebar-card process-card">
+              <h3 data-lang="how-title">How It Works</h3>
+              <div class="process-steps">
+                <div class="step">
+                  <span class="step-num">1</span>
+                  <p data-lang="step-1">Select your preferred date from the calendar.</p>
+                </div>
+                <div class="step">
+                  <span class="step-num">2</span>
+                  <p data-lang="step-2">Choose an available evening time slot.</p>
+                </div>
+                <div class="step">
+                  <span class="step-num">3</span>
+                  <p data-lang="step-3">Enter your details to instantly reserve.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sidebar-help">
+              <p data-lang="help-text">Need help with a custom date?</p>
+              <a href="contact.html" class="text-link" data-lang="help-link">Contact our team →</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <div id="booking-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-date-title">
-        <div class="modal-container booking-modal-content">
-            <button class="modal-close" aria-label="Close booking form">&times;</button>
-            <div class="modal-header">
-                <h3 id="modal-date-title">Booking for [Date]</h3>
-                <p>Select an available time slot below.</p>
-            </div>
-            <div class="modal-body">
-                <div class="slots-grid" role="radiogroup" aria-label="Available time slots">
-                    <button type="button" id="slot-a" class="slot-btn" data-slot="A">
-                        <span class="slot-time">6:00 PM – 8:00 PM</span>
-                        <span class="slot-status">Available</span>
-                    </button>
-                    <button type="button" id="slot-b" class="slot-btn" data-slot="B">
-                        <span class="slot-time">8:30 PM – 10:30 PM</span>
-                        <span class="slot-status">Available</span>
-                    </button>
-                </div>
-
-                <form id="booking-form" class="booking-form hidden">
-                    <div class="form-group">
-                        <label for="book-name">Full Name *</label>
-                        <input type="text" id="book-name" required minlength="2" placeholder="Jane Doe">
-                    </div>
-                    <div class="form-group">
-                        <label for="book-phone">Phone Number *</label>
-                        <input type="tel" id="book-phone" required pattern="[0-9+\-\s()]{7,}" placeholder="+1 (555) 000-0000">
-                    </div>
-                    <div class="form-group">
-                        <label for="book-email">Email (Optional)</label>
-                        <input type="email" id="book-email" placeholder="jane@example.com">
-                    </div>
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-primary btn-full">Confirm Booking</button>
-                    </div>
-                </form>
-            </div>
+      <div class="modal-container booking-modal-content">
+        <button class="modal-close" aria-label="Close booking form">&times;</button>
+        <div class="modal-header">
+          <h3 id="modal-date-title">Booking for [Date]</h3>
+          <p data-lang="modal-instr">Select an available time slot below.</p>
         </div>
+        <div class="modal-body">
+          <div class="slots-grid" role="radiogroup" aria-label="Available time slots">
+            <button type="button" id="slot-a" class="slot-btn" data-slot="A">
+              <span class="slot-time">6:00 PM – 8:00 PM</span>
+              <span class="slot-status" data-lang="status-avail">Available</span>
+            </button>
+            <button type="button" id="slot-b" class="slot-btn" data-slot="B">
+              <span class="slot-time">8:30 PM – 10:30 PM</span>
+              <span class="slot-status" data-lang="status-avail">Available</span>
+            </button>
+          </div>
+
+          <form id="booking-form" class="booking-form hidden">
+            <div class="form-group">
+              <label for="book-name" data-lang="lbl-name">Full Name *</label>
+              <input type="text" id="book-name" required minlength="2" placeholder="Jane Doe" />
+            </div>
+            <div class="form-group">
+              <label for="book-phone" data-lang="lbl-phone">Phone Number *</label>
+              <input type="tel" id="book-phone" required pattern="[0-9+\-\s()]{7,}" placeholder="+1 (555) 000-0000" />
+            </div>
+            <div class="form-group">
+              <label for="book-email" data-lang="lbl-email">Email (Optional)</label>
+              <input type="email" id="book-email" placeholder="jane@example.com" />
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary btn-full" data-lang="btn-confirm">Confirm Booking</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
 
     <div id="toast-container" class="toast-container" aria-live="polite"></div>
 
     <footer id="contact" class="footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <a href="index.html" class="logo">MALWIS.<span class="logo-accent">PARTY</span></a>
-                <p class="footer-tagline">Bringing bright energy to every celebration since 2023.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li></ul>
-            </div>
-            <div class="footer-contact">
-                 <h4>Get in Touch</h4>
-                 <p>123 Celebration Avenue, Metropolis, MP 54321<br>hello@malwis.party | +1 (555) 123-4567</p>
-            </div>
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">MALWIS.<span class="logo-accent">PARTY</span></a>
+          <p class="footer-tagline" data-lang="footer-tagline">Bringing bright energy to every celebration since 2023.</p>
         </div>
-        <div class="container copyright"><p>© 2025 Malwis Party. All rights reserved.</p></div>
+        <div class="footer-links">
+          <h4 data-lang="footer-links">Quick Links</h4>
+          <ul>
+            <li><a href="index.html" data-lang="nav-home">Home</a></li>
+            <li><a href="about.html" data-lang="nav-about">About</a></li>
+            <li><a href="services.html" data-lang="nav-services">Services</a></li>
+            <li><a href="gallery.html" data-lang="nav-gallery">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4 data-lang="footer-touch">Get in Touch</h4>
+          <p>123 Celebration Avenue, Metropolis, MP 54321<br />hello@malwis.party | +1 (555) 123-4567</p>
+        </div>
+      </div>
+      <div class="container copyright"><p>© 2025 Malwis Party. All rights reserved.</p></div>
     </footer>
 
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>

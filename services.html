@@ -1,367 +1,440 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Services at Malwis Party - Comprehensive event planning, venue rental, catering, and production.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Services at Malwis Party - Comprehensive event planning, venue rental, catering, and production." />
     <title>Our Services | Malwis Party</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">
-                MALWIS.<span class="logo-accent">PARTY</span>
-            </a>
-            <button class="mobile-toggle" aria-label="Toggle Navigation" id="mobile-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="booking.html">Book Now</a></li>
-                <li class="mobile-only"><a href="contact.html" class="btn btn-primary">Contact</a></li>
-            </ul>
-            <div class="nav-cta desktop-only">
-                <a href="contact.html" class="btn btn-primary">Contact</a>
-            </div>
+      <div class="container nav-container">
+        <a href="index.html" class="logo"> MALWIS.<span class="logo-accent">PARTY</span> </a>
+        <button class="mobile-toggle" aria-label="Toggle Navigation" id="mobile-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html" data-lang="nav-home">Home</a></li>
+          <li><a href="about.html" data-lang="nav-about">About</a></li>
+          <li><a href="services.html" data-lang="nav-services">Services</a></li>
+          <li><a href="gallery.html" data-lang="nav-gallery">Gallery</a></li>
+          <li><a href="booking.html" data-lang="nav-book">Book Now</a></li>
+          <li class="mobile-only">
+            <button class="btn btn-outline-white btn-sm lang-toggle" data-lang-btn="mobile">NL</button>
+          </li>
+          <li class="mobile-only"><a href="contact.html" class="btn btn-primary" data-lang="nav-contact">Contact</a></li>
+        </ul>
+        <div class="nav-cta desktop-only" style="display: flex; gap: 10px; align-items: center">
+          <button
+            class="btn btn-primary btn-sm lang-toggle"
+            id="desktop-lang-btn"
+            data-lang-btn="desktop"
+            style="min-width: 50px; padding: 0.6rem 1rem"
+          >
+            NL
+          </button>
+          <a href="contact.html" class="btn btn-primary" data-lang="nav-contact">Contact</a>
         </div>
+      </div>
     </nav>
 
-
     <main>
-        <section class="page-hero services-hero-premium">
-            <div class="hero-bg">
-                 <img src="assests/services/hero.png" alt="Elegant event service" class="hero-bg-img">
-                <div class="hero-gradient-overlay"></div>
-            </div>
-            <div class="container hero-content-overlay text-center">
-                <h1 class="hero-title-large animate-fade-up">
-                    Our <span class="gradient-text">Services</span>
-                </h1>
-                <p class="hero-subtitle-large animate-fade-up delay-200">
-                    Comprehensive event solutions — tailored packages, expert operations, flawless delivery.
-                </p>
-            </div>
-        </section>
+      <section class="page-hero services-hero-premium">
+        <div class="hero-bg">
+          <img src="assests/services/hero.png" alt="Elegant event service" class="hero-bg-img" />
+          <div class="hero-gradient-overlay"></div>
+        </div>
+        <div class="container hero-content-overlay text-center">
+          <h1 class="hero-title-large animate-fade-up" data-lang="serv-hero-title">Our <span class="gradient-text">Services</span></h1>
+          <p class="hero-subtitle-large animate-fade-up delay-200" data-lang="serv-hero-subtitle">
+            Comprehensive event solutions — tailored packages, expert operations, flawless delivery.
+          </p>
+        </div>
+      </section>
 
-        <section id="services-list" class="section-padding">
-            <div class="container">
-                <div class="services-grid-expanded">
-                    <div class="service-card animate-fade-up delay-100">
-                        <div class="service-icon">🏛️</div>
-                        <h3>Venue Rental</h3>
-                        <p>Flexible spaces for 50-350 guests. Includes main hall, rooftop lounge, and private suites.</p>
-                        <button class="text-link-btn" data-modal-target="#modal-service-1">View Details →</button>
-                    </div>
-                    <div class="service-card animate-fade-up delay-200">
-                        <div class="service-icon">💼</div>
-                        <h3>Corporate Events</h3>
-                        <p>Turnkey solutions for conferences, product launches, and team galas with full AV support.</p>
-                        <button class="text-link-btn" data-modal-target="#modal-service-2">View Details →</button>
-                    </div>
-                    <div class="service-card animate-fade-up delay-300">
-                        <div class="service-icon">🥂</div>
-                        <h3>Private Parties</h3>
-                        <p>Milestone birthdays, engagements, and receptions. We bring the energy, you bring the guests.</p>
-                        <button class="text-link-btn" data-modal-target="#modal-service-3">View Details →</button>
-                    </div>
-                    <div class="service-card animate-fade-up delay-100">
-                        <div class="service-icon">🍽️</div>
-                        <h3>Catering & Bar</h3>
-                        <p>Curated in-house menus, premium open bar packages, and experienced service staff.</p>
-                        <button class="text-link-btn" data-modal-target="#modal-service-4">View Details →</button>
-                    </div>
-                    <div class="service-card animate-fade-up delay-200">
-                        <div class="service-icon">🎧</div>
-                        <h3>AV & Production</h3>
-                        <p>State-of-the-art sound, intelligent lighting rigs, and projection mapping capabilities.</p>
-                        <button class="text-link-btn" data-modal-target="#modal-service-5">View Details →</button>
-                    </div>
-                    <div class="service-card animate-fade-up delay-300">
-                        <div class="service-icon">📅</div>
-                        <h3>Event Management</h3>
-                        <p>Dedicated coordinators to handle timelines, vendors, and day-of logistics.</p>
-                        <button class="text-link-btn" data-modal-target="#modal-service-6">View Details →</button>
-                    </div>
-                </div>
+      <section id="services-list" class="section-padding">
+        <div class="container">
+          <div class="services-grid-expanded">
+            <div class="service-card animate-fade-up delay-100">
+              <div class="service-icon">🏛️</div>
+              <h3 data-lang="s-item-1-title">Venue Rental</h3>
+              <p data-lang="s-item-1-desc">Flexible spaces for 50-350 guests. Includes main hall, rooftop lounge, and private suites.</p>
+              <button class="text-link-btn" data-modal-target="#modal-service-1" data-lang="btn-view-details">View Details →</button>
             </div>
-        </section>
-
-        <section id="packages" class="section-padding bg-offwhite">
-            <div class="container">
-                <div class="section-header animate-fade-up">
-                    <h2 class="section-title">Curated Packages</h2>
-                    <p class="section-subtitle">Simple starting points for your perfect event.</p>
-                </div>
-                <div class="packages-grid">
-                    <div class="package-card animate-fade-up delay-100">
-                        <h3>Starter</h3>
-                        <p class="package-price">From $2,500</p>
-                        <ul class="styled-list-sm">
-                            <li>4-hour Venue Rental</li>
-                            <li>Basic AV Setup</li>
-                            <li>On-site Manager</li>
-                        </ul>
-                        <a href="booking.html" class="btn btn-outline btn-sm">Request Quote</a>
-                    </div>
-                    <div class="package-card featured animate-fade-up delay-200">
-                        <div class="featured-tag">Most Popular</div>
-                        <h3>Signature</h3>
-                        <p class="package-price">From $5,500</p>
-                        <ul class="styled-list-sm">
-                            <li>8-hour Venue Rental</li>
-                            <li>Full AV & Lighting Package</li>
-                            <li>Open Bar (3 Hours)</li>
-                            <li>Dedicated Event Coordinator</li>
-                        </ul>
-                        <a href="booking.html" class="btn btn-primary btn-sm">Request Quote</a>
-                    </div>
-                    <div class="package-card animate-fade-up delay-300">
-                        <h3>Premium</h3>
-                        <p class="package-price">Custom Quote</p>
-                        <ul class="styled-list-sm">
-                            <li>Full-Day Exclusive Access</li>
-                            <li>Premium Catering & Top-Shelf Bar</li>
-                            <li>Custom Decor & Branding</li>
-                            <li>Full Production Team</li>
-                        </ul>
-                        <a href="booking.html" class="btn btn-outline btn-sm">Request Quote</a>
-                    </div>
-                </div>
+            <div class="service-card animate-fade-up delay-200">
+              <div class="service-icon">💼</div>
+              <h3 data-lang="s-item-2-title">Corporate Events</h3>
+              <p data-lang="s-item-2-desc">Turnkey solutions for conferences, product launches, and team galas with full AV support.</p>
+              <button class="text-link-btn" data-modal-target="#modal-service-2" data-lang="btn-view-details">View Details →</button>
             </div>
-        </section>
-
-        <section class="features-strip section-padding">
-            <div class="container features-grid animate-fade-up">
-                <div class="feature-item">
-                    <span class="feature-icon">📐</span>
-                    <h4>Flexible Layouts</h4>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-icon">🍳</span>
-                    <h4>In-house Catering</h4>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-icon">🛡️</span>
-                    <h4>Safety & Insurance</h4>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-icon">🤝</span>
-                    <h4>Dedicated Manager</h4>
-                </div>
+            <div class="service-card animate-fade-up delay-300">
+              <div class="service-icon">🥂</div>
+              <h3 data-lang="s-item-3-title">Private Parties</h3>
+              <p data-lang="s-item-3-desc">Milestone birthdays, engagements, and receptions. We bring the energy, you bring the guests.</p>
+              <button class="text-link-btn" data-modal-target="#modal-service-3" data-lang="btn-view-details">View Details →</button>
             </div>
-        </section>
-
-        <section class="section-padding bg-offwhite">
-            <div class="container">
-                <div class="case-study-card animate-fade-up">
-                    <div class="case-content">
-                        <span class="eyebrow gradient-text">Case Study</span>
-                        <h3>TechCorp Annual Gala</h3>
-                        <p>We transformed our main hall into a futuristic neon landscape for 300 guests. Featuring custom projection mapping, a curated cocktail menu, and seamless end-to-end management.</p>
-                        <a href="index.html#gallery" class="text-link">See Gallery →</a>
-                    </div>
-                    <div class="case-visual">
-                        <img src="assests/services/1.png" alt="TechCorp Gala Event">
-                    </div>
-                </div>
+            <div class="service-card animate-fade-up delay-100">
+              <div class="service-icon">🍽️</div>
+              <h3 data-lang="s-item-4-title">Catering & Bar</h3>
+              <p data-lang="s-item-4-desc">Curated in-house menus, premium open bar packages, and experienced service staff.</p>
+              <button class="text-link-btn" data-modal-target="#modal-service-4" data-lang="btn-view-details">View Details →</button>
             </div>
-        </section>
-
-        <section id="service-faqs" class="section-padding">
-            <div class="container">
-                <div class="section-header animate-fade-up">
-                    <h2 class="section-title">Service FAQs</h2>
-                </div>
-                <div class="faq-grid animate-fade-up delay-100">
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span>What is included in the venue rental fee?</span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p>Our base fee includes exclusive use of the booked space, standard tables and chairs, basic house lighting, and an on-site venue manager. Additional services like AV, catering, and decor are customized add-ons.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span>Can we bring outside vendors?</span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p>We have a preferred list of trusted vendors for catering and AV. Outside vendors for specialized services (like photographers or specific decor) are welcome upon approval and must provide proof of insurance.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span>Is a deposit required to book?</span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="faq-answer-content">
-                                <p>Yes, a 50% non-refundable deposit is required to secure your date. The remaining balance is due 30 days prior to the event.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="service-card animate-fade-up delay-200">
+              <div class="service-icon">🎧</div>
+              <h3 data-lang="s-item-5-title">AV & Production</h3>
+              <p data-lang="s-item-5-desc">State-of-the-art sound, intelligent lighting rigs, and projection mapping capabilities.</p>
+              <button class="text-link-btn" data-modal-target="#modal-service-5" data-lang="btn-view-details">View Details →</button>
             </div>
-        </section>
-
-        <section class="section-padding">
-            <div class="container">
-                <div class="cta-panel-premium animate-fade-up">
-                    <div class="cta-content">
-                        <h2 class="cta-title">Ready to plan your event?</h2>
-                        <p class="cta-text">Let's talk about your vision. Our team is ready to build a custom quote just for you.</p>
-                        <a href="booking.html" class="btn btn-primary-dark btn-large">Get a Custom Quote</a>
-                    </div>
-                    <div class="cta-visual">
-                        <div class="circle-1"></div>
-                        <div class="circle-2"></div>
-                    </div>
-                </div>
+            <div class="service-card animate-fade-up delay-300">
+              <div class="service-icon">📅</div>
+              <h3 data-lang="s-item-6-title">Event Management</h3>
+              <p data-lang="s-item-6-desc">Dedicated coordinators to handle timelines, vendors, and day-of logistics.</p>
+              <button class="text-link-btn" data-modal-target="#modal-service-6" data-lang="btn-view-details">View Details →</button>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
+      <section id="packages" class="section-padding bg-offwhite">
+        <div class="container">
+          <div class="section-header animate-fade-up">
+            <h2 class="section-title" data-lang="pkg-title">Curated Packages</h2>
+            <p class="section-subtitle" data-lang="pkg-subtitle">Simple starting points for your perfect event.</p>
+          </div>
+          <div class="packages-grid">
+            <div class="package-card animate-fade-up delay-100">
+              <h3 data-lang="pkg-1-name">Starter</h3>
+              <p class="package-price" data-lang="pkg-1-price">From $2,500</p>
+              <ul class="styled-list-sm">
+                <li data-lang="pkg-1-li-1">4-hour Venue Rental</li>
+                <li data-lang="pkg-1-li-2">Basic AV Setup</li>
+                <li data-lang="pkg-1-li-3">On-site Manager</li>
+              </ul>
+              <a href="booking.html" class="btn btn-outline btn-sm" data-lang="btn-req-quote">Request Quote</a>
+            </div>
+            <div class="package-card featured animate-fade-up delay-200">
+              <div class="featured-tag" data-lang="pkg-pop-tag">Most Popular</div>
+              <h3 data-lang="pkg-2-name">Signature</h3>
+              <p class="package-price" data-lang="pkg-2-price">From $5,500</p>
+              <ul class="styled-list-sm">
+                <li data-lang="pkg-2-li-1">8-hour Venue Rental</li>
+                <li data-lang="pkg-2-li-2">Full AV & Lighting Package</li>
+                <li data-lang="pkg-2-li-3">Open Bar (3 Hours)</li>
+                <li data-lang="pkg-2-li-4">Dedicated Event Coordinator</li>
+              </ul>
+              <a href="booking.html" class="btn btn-primary btn-sm" data-lang="btn-req-quote">Request Quote</a>
+            </div>
+            <div class="package-card animate-fade-up delay-300">
+              <h3 data-lang="pkg-3-name">Premium</h3>
+              <p class="package-price" data-lang="pkg-3-price">Custom Quote</p>
+              <ul class="styled-list-sm">
+                <li data-lang="pkg-3-li-1">Full-Day Exclusive Access</li>
+                <li data-lang="pkg-3-li-2">Premium Catering & Top-Shelf Bar</li>
+                <li data-lang="pkg-3-li-3">Custom Decor & Branding</li>
+                <li data-lang="pkg-3-li-4">Full Production Team</li>
+              </ul>
+              <a href="booking.html" class="btn btn-outline btn-sm" data-lang="btn-req-quote">Request Quote</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features-strip section-padding">
+        <div class="container features-grid animate-fade-up">
+          <div class="feature-item">
+            <span class="feature-icon">📐</span>
+            <h4 data-lang="feat-1">Flexible Layouts</h4>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🍳</span>
+            <h4 data-lang="feat-2">In-house Catering</h4>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🛡️</span>
+            <h4 data-lang="feat-3">Safety & Insurance</h4>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🤝</span>
+            <h4 data-lang="feat-4">Dedicated Manager</h4>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-padding bg-offwhite">
+        <div class="container">
+          <div class="case-study-card animate-fade-up">
+            <div class="case-content">
+              <span class="eyebrow gradient-text" data-lang="case-eyebrow">Case Study</span>
+              <h3 data-lang="case-title">TechCorp Annual Gala</h3>
+              <p data-lang="case-desc">
+                We transformed our main hall into a futuristic neon landscape for 300 guests. Featuring custom projection mapping, a curated cocktail
+                menu, and seamless end-to-end management.
+              </p>
+              <a href="index.html#gallery" class="text-link" data-lang="case-link">See Gallery →</a>
+            </div>
+            <div class="case-visual">
+              <img src="assests/services/1.png" alt="TechCorp Gala Event" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="service-faqs" class="section-padding">
+        <div class="container">
+          <div class="section-header animate-fade-up">
+            <h2 class="section-title" data-lang="serv-faq-title">Service FAQs</h2>
+          </div>
+          <div class="faq-grid animate-fade-up delay-100">
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span data-lang="s-faq-1-q">What is included in the venue rental fee?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p data-lang="s-faq-1-a">
+                    Our base fee includes exclusive use of the booked space, standard tables and chairs, basic house lighting, and an on-site venue
+                    manager. Additional services like AV, catering, and decor are customized add-ons.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span data-lang="s-faq-2-q">Can we bring outside vendors?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p data-lang="s-faq-2-a">
+                    We have a preferred list of trusted vendors for catering and AV. Outside vendors for specialized services (like photographers or
+                    specific decor) are welcome upon approval and must provide proof of insurance.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span data-lang="s-faq-3-q">Is a deposit required to book?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p data-lang="s-faq-3-a">
+                    Yes, a 50% non-refundable deposit is required to secure your date. The remaining balance is due 30 days prior to the event.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-padding">
+        <div class="container">
+          <div class="cta-panel-premium animate-fade-up">
+            <div class="cta-content">
+              <h2 class="cta-title" data-lang="serv-cta-title">Ready to plan your event?</h2>
+              <p class="cta-text" data-lang="serv-cta-text">Let's talk about your vision. Our team is ready to build a custom quote just for you.</p>
+              <a href="booking.html" class="btn btn-primary-dark btn-large" data-lang="serv-cta-btn">Get a Custom Quote</a>
+            </div>
+            <div class="cta-visual">
+              <div class="circle-1"></div>
+              <div class="circle-2"></div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <div class="modal-overlay" id="modal-service-1" role="dialog" aria-modal="true" aria-hidden="true">
-        <div class="modal-content service-modal">
-            <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-header">
-                <h3>Venue Rental Details</h3>
-            </div>
-            <div class="modal-body">
-                <ul class="styled-list">
-                    <li><strong>Main Hall:</strong> 3,500 sq ft, up to 350 standing / 250 seated.</li>
-                    <li><strong>Rooftop Lounge:</strong> 1,200 sq ft, perfect for cocktail hour (80 guests).</li>
-                    <li><strong>Amenities:</strong> Private bridal/VIP suites, dedicated load-in area, high-speed WiFi.</li>
-                    <li><strong>Includes:</strong> 60" round tables, banquet chairs, house sound system.</li>
-                </ul>
-                <div class="modal-cta">
-                     <a href="booking.html" class="btn btn-primary btn-sm">Request Quote for Venue</a>
-                </div>
-            </div>
+      <div class="modal-content service-modal">
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+        <div class="modal-header">
+          <h3 data-lang="m-1-title">Venue Rental Details</h3>
         </div>
+        <div class="modal-body">
+          <ul class="styled-list">
+            <li data-lang="m-1-li-1"><strong>Main Hall:</strong> 3,500 sq ft, up to 350 standing / 250 seated.</li>
+            <li data-lang="m-1-li-2"><strong>Rooftop Lounge:</strong> 1,200 sq ft, perfect for cocktail hour (80 guests).</li>
+            <li data-lang="m-1-li-3"><strong>Amenities:</strong> Private bridal/VIP suites, dedicated load-in area, high-speed WiFi.</li>
+            <li data-lang="m-1-li-4"><strong>Includes:</strong> 60" round tables, banquet chairs, house sound system.</li>
+          </ul>
+          <div class="modal-cta">
+            <a href="booking.html" class="btn btn-primary btn-sm" data-lang="m-1-btn">Request Quote for Venue</a>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="modal-overlay" id="modal-service-2" role="dialog" aria-modal="true" aria-hidden="true">
-        <div class="modal-content service-modal">
-            <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-header">
-                <h3>Corporate Event Services</h3>
-            </div>
-            <div class="modal-body">
-                 <ul class="styled-list">
-                    <li><strong>Turnkey Production:</strong> We handle stage design, AV, and run-of-show.</li>
-                    <li><strong>Branding:</strong> Custom lighting colors, projection mapping, and signage placement.</li>
-                    <li><strong>Catering:</strong> Breakfast, lunch, and all-day beverage packages available.</li>
-                    <li><strong>Breakouts:</strong> Modular wall systems to create smaller workshop areas.</li>
-                </ul>
-                <div class="modal-cta">
-                     <a href="booking.html" class="btn btn-primary btn-sm">Plan Corporate Event</a>
-                </div>
-            </div>
+      <div class="modal-content service-modal">
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+        <div class="modal-header">
+          <h3 data-lang="m-2-title">Corporate Event Services</h3>
         </div>
+        <div class="modal-body">
+          <ul class="styled-list">
+            <li data-lang="m-2-li-1"><strong>Turnkey Production:</strong> We handle stage design, AV, and run-of-show.</li>
+            <li data-lang="m-2-li-2"><strong>Branding:</strong> Custom lighting colors, projection mapping, and signage placement.</li>
+            <li data-lang="m-2-li-3"><strong>Catering:</strong> Breakfast, lunch, and all-day beverage packages available.</li>
+            <li data-lang="m-2-li-4"><strong>Breakouts:</strong> Modular wall systems to create smaller workshop areas.</li>
+          </ul>
+          <div class="modal-cta">
+            <a href="booking.html" class="btn btn-primary btn-sm" data-lang="m-2-btn">Plan Corporate Event</a>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="modal-overlay" id="modal-service-3" role="dialog" aria-modal="true" aria-hidden="true">
-        <div class="modal-content service-modal">
-            <button class="modal-close">&times;</button>
-            <h3>Private Parties</h3>
-             <ul class="styled-list">
-                <li>Perfect for birthdays, anniversaries, and engagement parties.</li>
-                <li>Access to our vetted DJ and live entertainment roster.</li>
-                <li>Flexible bar packages (beer/wine, premium open bar).</li>
-                <li>Customizable mood lighting included.</li>
-            </ul>
-             <a href="booking.html" class="btn btn-primary btn-sm">Start Planning</a>
-        </div>
+      <div class="modal-content service-modal">
+        <button class="modal-close">&times;</button>
+        <h3 data-lang="m-3-title">Private Parties</h3>
+        <ul class="styled-list">
+          <li data-lang="m-3-li-1">Perfect for birthdays, anniversaries, and engagement parties.</li>
+          <li data-lang="m-3-li-2">Access to our vetted DJ and live entertainment roster.</li>
+          <li data-lang="m-3-li-3">Flexible bar packages (beer/wine, premium open bar).</li>
+          <li data-lang="m-3-li-4">Customizable mood lighting included.</li>
+        </ul>
+        <a href="booking.html" class="btn btn-primary btn-sm" data-lang="m-3-btn">Start Planning</a>
+      </div>
     </div>
-     <div class="modal-overlay" id="modal-service-4" role="dialog" aria-modal="true" aria-hidden="true">
-        <div class="modal-content service-modal">
-            <button class="modal-close">&times;</button>
-            <h3>Catering & Bar</h3>
-             <ul class="styled-list">
-                <li>In-house culinary team specializing in modern, seasonal cuisine.</li>
-                <li>Plated dinners, heavy hors d'oeuvres, or chef stations.</li>
-                <li>Custom cocktail design by our lead mixologist.</li>
-                <li>Dietary accommodations (GF, Vegan, Kosher style) readily available.</li>
-            </ul>
-             <a href="booking.html" class="btn btn-primary btn-sm">See Sample Menus</a>
-        </div>
+    <div class="modal-overlay" id="modal-service-4" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal-content service-modal">
+        <button class="modal-close">&times;</button>
+        <h3 data-lang="m-4-title">Catering & Bar</h3>
+        <ul class="styled-list">
+          <li data-lang="m-4-li-1">In-house culinary team specializing in modern, seasonal cuisine.</li>
+          <li data-lang="m-4-li-2">Plated dinners, heavy hors d'oeuvres, or chef stations.</li>
+          <li data-lang="m-4-li-3">Custom cocktail design by our lead mixologist.</li>
+          <li data-lang="m-4-li-4">Dietary accommodations (GF, Vegan, Kosher style) readily available.</li>
+        </ul>
+        <a href="booking.html" class="btn btn-primary btn-sm" data-lang="m-4-btn">See Sample Menus</a>
+      </div>
     </div>
-     <div class="modal-overlay" id="modal-service-5" role="dialog" aria-modal="true" aria-hidden="true">
-        <div class="modal-content service-modal">
-            <button class="modal-close">&times;</button>
-            <h3>AV & Production</h3>
-             <ul class="styled-list">
-                <li>Concert-grade sound system tailored to the room acoustics.</li>
-                <li>Intelligent lighting rig with programmable scenes.</li>
-                <li>LED video walls and high-lumen projectors.</li>
-                <li>On-site AV technician included with all production packages.</li>
-            </ul>
-             <a href="booking.html" class="btn btn-primary btn-sm">Request AV Quote</a>
-        </div>
+    <div class="modal-overlay" id="modal-service-5" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal-content service-modal">
+        <button class="modal-close">&times;</button>
+        <h3 data-lang="m-5-title">AV & Production</h3>
+        <ul class="styled-list">
+          <li data-lang="m-5-li-1">Concert-grade sound system tailored to the room acoustics.</li>
+          <li data-lang="m-5-li-2">Intelligent lighting rig with programmable scenes.</li>
+          <li data-lang="m-5-li-3">LED video walls and high-lumen projectors.</li>
+          <li data-lang="m-5-li-4">On-site AV technician included with all production packages.</li>
+        </ul>
+        <a href="booking.html" class="btn btn-primary btn-sm" data-lang="m-5-btn">Request AV Quote</a>
+      </div>
     </div>
-     <div class="modal-overlay" id="modal-service-6" role="dialog" aria-modal="true" aria-hidden="true">
-        <div class="modal-content service-modal">
-            <button class="modal-close">&times;</button>
-            <h3>Event Management</h3>
-             <ul class="styled-list">
-                <li>Month-of coordination to finalize all vendor details.</li>
-                <li>Day-of on-site manager to execute the run-of-show.</li>
-                <li>Management of load-in, setup, and strike.</li>
-                <li>Guest list management and check-in support available.</li>
-            </ul>
-             <a href="booking.html" class="btn btn-primary btn-sm">Meet Our Team</a>
-        </div>
+    <div class="modal-overlay" id="modal-service-6" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal-content service-modal">
+        <button class="modal-close">&times;</button>
+        <h3 data-lang="m-6-title">Event Management</h3>
+        <ul class="styled-list">
+          <li data-lang="m-6-li-1">Month-of coordination to finalize all vendor details.</li>
+          <li data-lang="m-6-li-2">Day-of on-site manager to execute the run-of-show.</li>
+          <li data-lang="m-6-li-3">Management of load-in, setup, and strike.</li>
+          <li data-lang="m-6-li-4">Guest list management and check-in support available.</li>
+        </ul>
+        <a href="booking.html" class="btn btn-primary btn-sm" data-lang="m-6-btn">Meet Our Team</a>
+      </div>
     </div>
 
     <footer id="contact" class="footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <a href="index.html" class="logo">MALWIS.<span class="logo-accent">PARTY</span></a>
-                <p class="footer-tagline">Bringing bright energy to every celebration since 2023.</p>
-                <div class="social-handles">
-                    <a href="#" aria-label="Instagram" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
-                    <a href="#" aria-label="Facebook" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
-                    <a href="#" aria-label="Twitter" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
-                     <a href="#" aria-label="LinkedIn" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-                </div>
-            </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="index.html#gallery">Gallery</a></li>
-                    <li><a href="index.html#faqs">FAQs</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                 <h4>Get in Touch</h4>
-                 <p>123 Celebration Avenue,<br>Metropolis, MP 54321</p>
-                 <p>hello@malwis.party<br>+1 (555) 123-4567</p>
-                 <a href="mailto:hello@malwis.party" class="btn btn-primary footer-btn">Email Us</a>
-            </div>
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">MALWIS.<span class="logo-accent">PARTY</span></a>
+          <p class="footer-tagline" data-lang="footer-tagline">Bringing bright energy to every celebration since 2023.</p>
+          <div class="social-handles">
+            <a href="#" aria-label="Instagram" class="social-icon"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg
+            ></a>
+            <a href="#" aria-label="Facebook" class="social-icon"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg
+            ></a>
+            <a href="#" aria-label="Twitter" class="social-icon"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"
+                ></path></svg
+            ></a>
+            <a href="#" aria-label="LinkedIn" class="social-icon"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle></svg
+            ></a>
+          </div>
         </div>
-        <div class="container copyright">
-            <p>© 2025 Malwis Party. All rights reserved.</p>
+        <div class="footer-links">
+          <h4 data-lang="footer-links">Quick Links</h4>
+          <ul>
+            <li><a href="index.html" data-lang="nav-home">Home</a></li>
+            <li><a href="about.html" data-lang="nav-about">About</a></li>
+            <li><a href="gallery.html" data-lang="nav-gallery">Gallery</a></li>
+            <li><a href="index.html#faqs" data-lang="footer-faq">FAQs</a></li>
+          </ul>
         </div>
+        <div class="footer-contact">
+          <h4 data-lang="footer-touch">Get in Touch</h4>
+          <p>123 Celebration Avenue,<br />Metropolis, MP 54321</p>
+          <p>hello@malwis.party<br />+1 (555) 123-4567</p>
+          <a href="mailto:hello@malwis.party" class="btn btn-primary footer-btn" data-lang="footer-email-btn">Email Us</a>
+        </div>
+      </div>
+      <div class="container copyright">
+        <p>© 2025 Malwis Party. All rights reserved.</p>
+      </div>
     </footer>
 
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
